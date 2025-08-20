@@ -20,11 +20,12 @@ const data = {
     "ShatteredFate": { "name": "Shattered Fate", "pen": 7377 },
     "Advancing Yokeda": { "name": "Advancing Yokeda", "critDamage": 0 },
     "SulXan": { "name": "Sul-Xan's Torment", "critDamage": 12 },
-    "ArmorSetPenPassive": { "name": "Armor-set Passive", "pen": 1487, "type": "dropdown", "options": [0, 1, 2, 3], "default": 0, "tooltip": "Armor-sets and mythics like Archdruid, Ansuul, and Tideborn each give a penetration line" }
+    "ArmorSetPenPassive": { "name": "Armor-set Passive", "pen": 1487, "type": "dropdown", "options": [0, 1, 2, 3], "default": 0, "tooltip": "Armor-sets and mythics like Archdruid, Ansuul, and Tideborn each give a penetration line" },
+    "Arena1Piece": { "name": "Arena 1-piece", "pen": 1190 }
   },
   "mythics": {
     "HarpoonerKilt": { "name": "Harpooner's Wading Kilt", "critDamage": 10 },
-    "VelithiUrMage": { "name": "Velithi Ur-Mage's Amulet", "pen": 1650, "triggers": [{ "key": "MinorForce", "action": "check" }] }
+    "VelothiUrMage": { "name": "Velothi Amulet", "pen": 1650, "triggers": [{ "key": "MinorForce", "action": "check" }] }
   },
   "mundus": {
     "TheApprentice": { "name": "The Apprentice", "pen": 0, "critDamage": 0 },
@@ -44,9 +45,9 @@ const data = {
   "supportSets": {
     "ElementalCatalyst": { "name": "Elemental Catalyst", "critDamage": 15 },
     "LucentEchoes": { "name": "Lucent Echoes", "critDamage": 11 },
-    "Alkosh": { "name": "Roar of Alkosh", "pen": 3010 },
+    "Alkosh": { "name": "Roar of Alkosh", "pen": 6000 },
     "CrimsonOath": { "name": "Crimson Oath's Rive", "pen": 3541 },
-    "Tremorscale": { "name": "Tremorscale", "pen": 2395 }
+    "Tremorscale": { "name": "Tremorscale", "pen": 2640 },
   },
   "racialPassives": {
     "FELINE_AMBUSH": { "name": "Feline Ambush", "critDamage": 12, "race": "KHAJIIT" },
@@ -57,7 +58,7 @@ const data = {
       "name": "Herald / Assassination / Ardent Flame",
       "race": "DARK_ELF",
       "mundus": "TheThief",
-      "mythic": "VelithiUrMage",
+      "mythic": "VelothiUrMage",
       "mainSkillLine": "HERALD_OF_THE_TOME",
       "skillLine2": "ASSASSINATION",
       "skillLine3": "ARDENT_FLAME"
@@ -66,7 +67,7 @@ const data = {
       "name": "Herald / Assassination / Aedric Spear",
       "race": "DARK_ELF",
       "mundus": "TheThief",
-      "mythic": "VelithiUrMage",
+      "mythic": "VelothiUrMage",
       "mainSkillLine": "HERALD_OF_THE_TOME",
       "skillLine2": "ASSASSINATION",
       "skillLine3": "AEDRIC_SPEAR"
@@ -75,7 +76,7 @@ const data = {
       "name": "Herald / Assassination / Gravelord",
       "race": "DARK_ELF",
       "mundus": "TheThief",
-      "mythic": "VelithiUrMage",
+      "mythic": "VelothiUrMage",
       "mainSkillLine": "HERALD_OF_THE_TOME",
       "skillLine2": "ASSASSINATION",
       "skillLine3": "GRAVE_LORD"
@@ -159,13 +160,13 @@ const data = {
   },
   "skills": {
     // Class Skills
-    "CRYSTAL_WEAPON": { "name": "Crystal Weapon", "pen": 5948, "skillLine": "DARK_MAGIC", "class": "SORCERER", "skillOrPassive": "skill" },
-    "RUNIC_SUNDER": { "name": "Runic Sunder", "pen": 2974, "skillLine": "HERALD_OF_THE_TOME", "class": "ARCANIST", "skillOrPassive": "skill" },
+    "CRYSTAL_WEAPON": { "name": "Crystal Weapon", "pen": 1000, "skillLine": "DARK_MAGIC", "class": "SORCERER", "skillOrPassive": "skill" },
+    "RUNIC_SUNDER": { "name": "Runic Sunder", "pen": 2200, "skillLine": "HERALD_OF_THE_TOME", "class": "ARCANIST", "skillOrPassive": "skill" },
     // Class Passives
     "PIERCING_SPEAR": { "name": "Piercing Spear", "critDamage": 12, "skillLine": "AEDRIC_SPEAR", "class": "TEMPLAR", "skillOrPassive": "passive" },
     "FATED_FORTUNE": { "name": "Fated Fortune", "critDamage": 12, "skillLine": "HERALD_OF_THE_TOME", "class": "ARCANIST", "skillOrPassive": "passive" },
     "DISMEMBER": { "name": "Dismember", "pen": 3271, "skillLine": "GRAVE_LORD", "class": "NECROMANCER", "skillOrPassive": "passive" },
-    "SPLINTERED_SECRETS": { "name": "Splintered Secrets", "pen": 1240, "type": "dropdown", "options": [0, 1, 2, 3, 4, 5, 6], "default": 0, "skillLine": "HERALD_OF_THE_TOME", "class": "ARCANIST", "skillOrPassive": "passive" },
+    "SPLINTERED_SECRETS": { "name": "Splintered Secrets", "pen": 1240, "type": "dropdown", "options": [0, 1, 2, 3, 4, 5, 6], "default": 2, "skillLine": "HERALD_OF_THE_TOME", "class": "ARCANIST", "skillOrPassive": "passive" },
     "ADVANCED_SPECIES": { "name": "Adv. Species", "critDamage": 5, "type": "dropdown", "options": [0, 1, 2, 3, 4, 5, 6], "default": 0, "skillLine": "ANIMAL_COMPANIONS", "class": "WARDEN", "skillOrPassive": "passive" },
     
     // Weapon Passives
@@ -173,6 +174,7 @@ const data = {
     "HEAVY_WEAPONS_MACE": { "name": "2H Weapon (Mace)", "pen": 3300, "skillLine": "TWO_HANDED", "skillOrPassive": "passive" },
     "TWIN_BLADE_BLUNT_AXES": { "name": "Dual Wield (Axe)", "critDamage": 6, "type": "dropdown", "options": [0, 1, 2], "default": 0, "skillLine": "DUAL_WIELD", "skillOrPassive": "passive" },
     "TWIN_BLADE_BLUNT_MACES": { "name": "Dual Wield (Mace)", "pen": 2329, "type": "dropdown", "options": [0, 1, 2], "default": 0, "skillLine": "DUAL_WIELD", "skillOrPassive": "passive" },
+    "SHARPENED": { "name": "Sharpened", "pen": 1650, "type": "dropdown", "options": [0, 1, 2], "default": 0, "tooltip": "Sharpened trait gives flag 1650 pen per piece" },
 
     // Armor Passives
     "PENETRATING_MAGIC": { "name": "Penetrating Magic", "pen": 939, "type": "dropdown", "options": [0, 1, 2, 3, 4, 5, 6, 7], "default": 1, "skillLine": "LIGHT_ARMOR", "skillOrPassive": "passive" },
@@ -200,12 +202,16 @@ function initUI() {
   document.getElementById('mythicSelect').addEventListener('change', (e) => handleConfigChange('mythics', e.target.value));
   document.getElementById('mundusSelect').addEventListener('change', (e) => handleConfigChange('mundus', e.target.value));
   document.getElementById('mainSkillLineSelect').addEventListener('change', updateConfigPanelStyle);
-
-  // Add event listeners to update select colors on change
-  document.getElementById('mainSkillLineSelect').addEventListener('change', updateSelectColor);
-  document.getElementById('skillLine2Select').addEventListener('change', updateSelectColor);
-  document.getElementById('skillLine3Select').addEventListener('change', updateSelectColor);
-
+  
+  // Add event listeners for skill line selections
+  ['mainSkillLineSelect', 'skillLine2Select', 'skillLine3Select'].forEach(id => {
+    const select = document.getElementById(id);
+    if (select) {
+      select.addEventListener('change', updateSelectColor);
+      select.addEventListener('change', updateClassSkillsBasedOnSelection);
+    }
+  });
+  
   // Event listener for all inputs in the tables to trigger calculation
   document.querySelectorAll('#penetration-tbody input, #penetration-tbody select, #crit-damage-tbody input, #crit-damage-tbody select').forEach(el => {
       el.addEventListener('change', calculate);
@@ -412,7 +418,7 @@ function populateTables() {
   };
 
   const categoryOrder = [
-    'universal', 'modifiers', 'mythics', 'racialPassives', 'sets', 'mundus', 'supportSets', 'cp', 'classSkills', 'classPassives', 'weaponPassives', 'armorPassives'
+    'universal', 'modifiers', 'armorPassives', 'mythics', 'racialPassives', 'sets', 'supportSets', 'cp', 'classSkills', 'classPassives', 'weaponPassives', 'mundus'
   ];
 
   categoryOrder.forEach(categoryKey => {
@@ -648,6 +654,46 @@ function calculate() {
 
   critEl.textContent = `${critTotal}%`;
   critEl.style.color = critTotal >= critTarget ? 'lightgreen' : '#ffcc00';
+}
+
+function updateClassSkillsBasedOnSelection() {
+  const selectedSkillLines = new Set();
+  ['mainSkillLineSelect', 'skillLine2Select', 'skillLine3Select'].forEach(id => {
+    const select = document.getElementById(id);
+    if (select && select.value) {
+      selectedSkillLines.add(select.value);
+    }
+  });
+
+  const classSkillInputs = document.querySelectorAll("input[data-category='classSkills'], input[data-category='classPassives'], select[data-category='classSkills'], select[data-category='classPassives']");
+
+  classSkillInputs.forEach(input => {
+    const key = input.dataset.key;
+    const skillData = data.skills[key];
+    if (!skillData || !skillData.skillLine) return;
+
+    const isSelected = selectedSkillLines.has(skillData.skillLine);
+    let valueChanged = false;
+
+    if (input.tagName.toLowerCase() === 'select') {
+      const newValue = isSelected ? skillData.default : 0;
+      if (input.value != newValue) {
+        input.value = newValue;
+        valueChanged = true;
+      }
+    } else { // checkbox
+      const newCheckedState = isSelected ? (skillData.default === 'on') : false;
+      if (input.checked !== newCheckedState) {
+        input.checked = newCheckedState;
+      }
+    }
+
+    if (valueChanged) {
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  });
+
+  calculate();
 }
 
 function updateConfigPanelStyle() {
