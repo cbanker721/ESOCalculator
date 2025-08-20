@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ESO Pen & Crit Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>ESO Penetration & Crit Calculator <span id="patch-version"></span></h1>
+  
+  <div class="main-content-wrapper">
+    <div class="left-panel">
+      <div class="presets-section">
+        <h2>Presets</h2>
+        <div id="presets-container">
+          <!-- JS will populate this -->
+        </div>
+      </div>
+      <div class="configuration-section" id="configuration-section">
+        <h2>Configuration</h2>
+        <div class="config-item">
+          <label for="raceSelect">Race:</label>
+          <select id="raceSelect">
+            <option value="">None</option>
+          </select>
+        </div>
+        <div class="config-item">
+          <label for="mundusSelect">Mundus:</label>
+          <select id="mundusSelect">
+            <option value="">None</option>
+          </select>
+        </div>
+        <div class="config-item">
+          <label for="mythicSelect">Mythic:</label>
+          <select id="mythicSelect">
+            <option value="">None</option>
+          </select>
+        </div>
+        <div class="config-item">
+          <label for="mainSkillLineSelect">Main Skill Line:</label>
+          <select id="mainSkillLineSelect">
+            <option value="">None</option>
+          </select>
+        </div>
+        <div class="config-item">
+          <label for="skillLine2Select">Skill Line 2:</label>
+          <select id="skillLine2Select">
+            <option value="">None</option>
+          </select>
+        </div>
+        <div class="config-item">
+          <label for="skillLine3Select">Skill Line 3:</label>
+          <select id="skillLine3Select">
+            <option value="">None</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="calculator-section">
+        <div class="calculator-header">
+          <h2>Penetration <span class="total-display">(Total: <span id="pen-total">0</span> / 18200)</span></h2>
+        </div>
+        <table id="penetration-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Source</th>
+              <th>Value</th>
+              <th>Enabled</th>
+            </tr>
+          </thead>
+          <tbody id="penetration-tbody">
+            <!-- JS will populate this -->
+          </tbody>
+        </table>
+      </div>
+  
+      <div class="calculator-section">
+        <div class="calculator-header">
+          <h2>Critical Damage <span class="total-display">(Total: <span id="crit-total">0%</span> / 125%)</span></h2>
+        </div>
+        <table id="crit-damage-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Source</th>
+              <th>Value (%)</th>
+              <th>Enabled</th>
+            </tr>
+          </thead>
+          <tbody id="crit-damage-tbody">
+            <!-- JS will populate this -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

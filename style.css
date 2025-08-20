@@ -1,0 +1,188 @@
+body {
+    font-family: sans-serif;
+    background-color: #2a2a2e;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 15px;
+    line-height: 1.6;
+    /* Center the main content on the page */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+.main-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 240px; /* A bit wider for longer preset names */
+}
+
+.presets-section {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-bottom: 25px;
+}
+
+.presets-section h2 {
+    margin-top: 0;
+    color: #ffcc00;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 8px;
+}
+
+.preset-item {
+    display: block;
+    margin-top: 10px;
+}
+
+.preset-item label {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.configuration-section {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 3px solid #444; /* Default border color */
+    transition: border-color 0.3s ease; /* Smooth transition for color change */
+}
+
+.configuration-section h2 {
+    margin-top: 0;
+    color: #ffcc00;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 8px;
+}
+
+.config-item {
+    margin-top: 15px;
+}
+
+.container {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    flex: 1; /* Allow this container to take up remaining space */
+}
+
+.calculator-section {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    flex: 1;
+    min-width: 400px;
+    max-width: 500px;
+}
+
+.calculator-header {
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.calculator-section h2 {
+    color: #ffcc00;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+thead th {
+    background-color: #444;
+    color: #ffcc00;
+}
+
+.total-display {
+    font-weight: normal;
+    color: #f0f0f0;
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+.category-cell {
+    background-color: #38383c;
+    color: #ffcc00;
+    font-weight: bold;
+    font-style: italic;
+    vertical-align: top;
+    padding-top: 10px;
+    border-right: 1px solid #4a4a4e;
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+    cursor: help;
+    background-color: #555;
+    color: #ffcc00;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.tooltip-container .tooltip-text {
+    visibility: hidden;
+    width: 220px;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -110px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-weight: normal;
+    line-height: 1.4;
+    white-space: pre-wrap; /* Allow newlines in tooltip */
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+select {
+    background-color: #444;
+    color: #f0f0f0;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 5px;
+}
