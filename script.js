@@ -20,6 +20,7 @@ const data = {
     "ShatteredFate": { "name": "Shattered Fate", "pen": 7377 },
     "Advancing Yokeda": { "name": "Advancing Yokeda", "critDamage": 0 },
     "SulXan": { "name": "Sul-Xan's Torment", "critDamage": 12 },
+    "MorasScribeThesis": { "name": "Mora's Scribe Thesis", "critDamage": 12 },
     "ArmorSetPenPassive": { "name": "Armor-set Passive", "pen": 1487, "type": "dropdown", "options": [0, 1, 2, 3], "default": 0 },
     "Arena1Piece": { "name": "Arena 1-piece", "pen": 1190 }
   },
@@ -44,7 +45,7 @@ const data = {
   },
   "supportSets": {
     "ElementalCatalyst": { "name": "Elemental Catalyst", "critDamage": 15 },
-    "LucentEchoes": { "name": "Lucent Echoes", "critDamage": 11 },
+    "LucentEchoes": { "name": "Lucent Echoes", "critDamage": 11, "default": "on" },
     "Alkosh": { "name": "Roar of Alkosh", "pen": 6000 },
     "CrimsonOath": { "name": "Crimson Oath's Rive", "pen": 3541 },
     "Tremorscale": { "name": "Tremorscale", "pen": 2640 },
@@ -151,10 +152,10 @@ const data = {
     "MajorForce": { "name": "Major Force", "critDamage": 20 },
     "MinorForce": { "name": "Minor Force", "critDamage": 10 },
     "MajorBrittle": { "name": "Major Brittle", "critDamage": 20 },
-    "MinorBrittle": { "name": "Minor Brittle", "critDamage": 10 }
+    "MinorBrittle": { "name": "Minor Brittle", "critDamage": 10, "default": "on" }
   },
   "cp": {
-    "FightingFinesse": { "name": "Fighting Finesse", "critDamage": 8 },
+    "FightingFinesse": { "name": "Fighting Finesse", "critDamage": 8, "default": "on" },
     "Backstabber": { "name": "Backstabber", "critDamage": 10 },
     "ForceOfNature": { "name": "Force of Nature", "pen": 660, "type": "dropdown", "options": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "default": 0 }
   },
