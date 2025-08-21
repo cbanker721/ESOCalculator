@@ -87,8 +87,8 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     flex: 1;
-    min-width: 400px;
-    max-width: 500px;
+    min-width: 450px; /* Adjusted for wider content */
+    max-width: 600px; /* Adjusted for wider content */
 }
 
 .calculator-header {
@@ -112,6 +112,7 @@ th, td {
     padding: 8px 10px;
     text-align: left;
     border-bottom: 1px solid #444;
+    white-space: nowrap; /* Prevent content from wrapping to a new line */
 }
 
 thead th {
