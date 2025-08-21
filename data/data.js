@@ -30,21 +30,6 @@ const data = {
     "HarpoonerKilt": { "name": "Harpooner's Kilt", "critDamage": 10 },
     "VelothiUrMage": { "name": "Velothi Amulet", "pen": 1650, "triggers": [{ "key": "MinorForce", "action": "check" }] }
   },
-  "mundus": {
-    "TheApprentice": { "name": "The Apprentice", "pen": 0, "critDamage": 0 },
-    "TheAtronach": { "name": "The Atronach", "pen": 0, "critDamage": 0 },
-    "TheLady": { "name": "The Lady", "pen": 0, "critDamage": 0 },
-    "TheLord": { "name": "The Lord", "pen": 0, "critDamage": 0 },
-    "TheLover": { "name": "The Lover", "pen": 2754 },
-    "TheMage": { "name": "The Mage", "pen": 0, "critDamage": 0 },
-    "TheRitual": { "name": "The Ritual", "pen": 0, "critDamage": 0 },
-    "TheSerpent": { "name": "The Serpent", "pen": 0, "critDamage": 0 },
-    "TheShadow": { "name": "The Shadow", "critDamage": 18 },
-    "TheSteed": { "name": "The Steed", "pen": 0, "critDamage": 0 },
-    "TheThief": { "name": "The Thief", "pen": 0, "critDamage": 0 },
-    "TheTower": { "name": "The Tower", "pen": 0, "critDamage": 0 },
-    "TheWarrior": { "name": "The Warrior", "pen": 0, "critDamage": 0 }
-  },
   "supportSets": {
     "ElementalCatalyst": { "name": "Elemental Catalyst", "critDamage": 15 },
     "LucentEchoes": { "name": "Lucent Echoes", "critDamage": 11, "default": "on" },
@@ -188,3 +173,5 @@ const data = {
     "DEXTERITY": { "name": "Dexterity", "critDamage": 2, "type": "dropdown", "options": [0, 1, 2, 3, 4, 5, 6, 7], "default": 6, "skillLine": "MEDIUM_ARMOR", "skillOrPassive": "passive", "sourceUrl": "https://eso-hub.com/en/skills/armor/medium-armor", "tooltip": "Increase your Critical Damage by 2% for every piece of Medium Armor equipped.", "hyperlink": "https://en.uesp.net/wiki/Online:Dexterity" }
   }
 };
+
+data.mundus = mundusData;
