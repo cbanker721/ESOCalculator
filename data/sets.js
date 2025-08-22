@@ -4,8 +4,8 @@ const setsData = {
   "Advancing Yokeda": { "name": "Advancing Yokeda", "critDamage": 0 },
   "SulXan": { "name": "Sul-Xan's Torment", "critDamage": 12 },
   "MorasScribeThesis": { "name": "Mora's Scribe Thesis", "critDamage": 12 },
-  "ArmorSetPenPassive": { "name": "Armor-set Passive", "pen": 1487, "type": "dropdown", "options": [0, 1, 2, 3], "default": 0 },
-  "Arena1Piece": { "name": "Arena 1-piece", "pen": 1190 }
+  "ArmorSetPenPassive": { "name": "Armor-set Passive", "pen": 1487, "type": "dropdown", "options": [0, 1, 2, 3], "default": 0, tooltip: "Pen from armor sets like Arch Druid (1-piece), Ansuul's Torment, and Tideborn" },
+  "Arena1Piece": { "name": "Arena 1-piece", "pen": 1190, "tooltip": "Pen from arena weapons like Perfected Maelstrom staff" },
 };
 
 const mythicsData = {
