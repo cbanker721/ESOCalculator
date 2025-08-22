@@ -2,35 +2,35 @@ const data = {
   "presets": {
     "heraldAssassinationArdentFlame": {
       "name": "Herald / Assassination / Ardent Flame",
-      "race": "DARK_ELF",
-      "mundus": "TheThief",
-      "mythic": "VelothiUrMage",
-      "mainSkillLine": "HERALD_OF_THE_TOME",
-      "skillLine2": "ASSASSINATION",
-      "skillLine3": "ARDENT_FLAME"
+      "race": RaceEnum.DARK_ELF,
+      "mundus": MundusEnum.TheThief,
+      "mythic": MythicEnum.VelothiUrMage,
+      "mainSkillLine": SkillLineEnum.HERALD_OF_THE_TOME,
+      "skillLine2": SkillLineEnum.ASSASSINATION,
+      "skillLine3": SkillLineEnum.ARDENT_FLAME
     },
     "heraldAssassinationAedricSpear": {
       "name": "Herald / Assassination / Aedric Spear",
-      "race": "DARK_ELF",
-      "mundus": "TheThief",
-      "mythic": "VelothiUrMage",
-      "mainSkillLine": "HERALD_OF_THE_TOME",
-      "skillLine2": "ASSASSINATION",
-      "skillLine3": "AEDRIC_SPEAR"
+      "race": RaceEnum.DARK_ELF,
+      "mundus": MundusEnum.TheThief,
+      "mythic": MythicEnum.VelothiUrMage,
+      "mainSkillLine": SkillLineEnum.HERALD_OF_THE_TOME,
+      "skillLine2": SkillLineEnum.ASSASSINATION,
+      "skillLine3": SkillLineEnum.AEDRIC_SPEAR
     },
     "heraldAssassinationGravelord": {
       "name": "Herald / Assassination / Gravelord",
-      "race": "DARK_ELF",
-      "mundus": "TheThief",
-      "mythic": "VelothiUrMage",
-      "mainSkillLine": "HERALD_OF_THE_TOME",
-      "skillLine2": "ASSASSINATION",
-      "skillLine3": "GRAVE_LORD"
+      "race": RaceEnum.DARK_ELF,
+      "mundus": MundusEnum.TheThief,
+      "mythic": MythicEnum.VelothiUrMage,
+      "mainSkillLine": SkillLineEnum.HERALD_OF_THE_TOME,
+      "skillLine2": SkillLineEnum.ASSASSINATION,
+      "skillLine3": SkillLineEnum.GRAVE_LORD
     },
     "custom": {
       "name": "Custom",
-      "race": "DARK_ELF",
-      "mundus": "TheThief",
+      "race": RaceEnum.DARK_ELF,
+      "mundus": MundusEnum.TheThief,
       "mythic": "",
       "mainSkillLine": "",
       "skillLine2": "",
@@ -56,6 +56,6 @@ data.skills = skillsData;
 data.modifiers = modifiersData;
 
 // Add Piercing to universal by reference, but with its own default
-data.universal.Piercing = { ...data.cp.Piercing, "default": "on" };
+data.universal.Piercing = { ...data.cp[CpEnum.Piercing], "default": "on" };
 // Remove Piercing from cp so it doesn't render in the CP category
-delete data.cp.Piercing;
+delete data.cp[CpEnum.Piercing];

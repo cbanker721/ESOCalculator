@@ -1,9 +1,9 @@
 const classesData = {
-  "ARCANIST": { "name": "Arcanist", "skillLines": ["HERALD_OF_THE_TOME", "SOLDIER_OF_APOCRYPHA", "CURATIVE_RUNEFORMS"], "color": "lightgreen", "sourceUrl": "https://eso-hub.com/en/skills/arcanist" },
-  "DRAGONKNIGHT": { "name": "Dragonknight", "skillLines": ["ARDENT_FLAME", "DRACONIC_POWER", "EARTHEN_HEART"], "color": "orange", "sourceUrl": "https://eso-hub.com/en/skills/dragonknight" },
-  "NECROMANCER": { "name": "Necromancer", "skillLines": ["GRAVE_LORD", "BONE_TYRANT", "LIVING_DEATH"], "color": "violet", "sourceUrl": "https://eso-hub.com/en/skills/necromancer" },
-  "NIGHTBLADE": { "name": "Nightblade", "skillLines": ["ASSASSINATION", "SHADOW", "SIPHONING"], "color": "#DE5D83", "sourceUrl": "https://eso-hub.com/en/skills/nightblade" },
-  "SORCERER": { "name": "Sorcerer", "skillLines": ["DAEDRIC_SUMMONING", "DARK_MAGIC", "STORM_CALLING"], "color": "#ccccff", "sourceUrl": "https://eso-hub.com/en/skills/sorcerer" },
-  "TEMPLAR": { "name": "Templar", "skillLines": ["AEDRIC_SPEAR", "DAWNS_WRATH", "RESTORING_LIGHT"], "color": "yellow", "sourceUrl": "https://eso-hub.com/en/skills/templar" },
-  "WARDEN": { "name": "Warden", "skillLines": ["ANIMAL_COMPANIONS", "GREEN_BALANCE", "WINTERS_EMBRACE"], "color": "mediumseagreen", "sourceUrl": "https://eso-hub.com/en/skills/warden" }
+  [ClassEnum.ARCANIST]: { "name": "Arcanist", "skillLines": [SkillLineEnum.HERALD_OF_THE_TOME, SkillLineEnum.SOLDIER_OF_APOCRYPHA, SkillLineEnum.CURATIVE_RUNEFORMS], "color": "lightgreen", "sourceUrl": "https://eso-hub.com/en/skills/arcanist" },
+  [ClassEnum.DRAGONKNIGHT]: { "name": "Dragonknight", "skillLines": [SkillLineEnum.ARDENT_FLAME, SkillLineEnum.DRACONIC_POWER, SkillLineEnum.EARTHEN_HEART], "color": "orange", "sourceUrl": "https://eso-hub.com/en/skills/dragonknight" },
+  [ClassEnum.NECROMANCER]: { "name": "Necromancer", "skillLines": [SkillLineEnum.GRAVE_LORD, SkillLineEnum.BONE_TYRANT, SkillLineEnum.LIVING_DEATH], "color": "violet", "sourceUrl": "https://eso-hub.com/en/skills/necromancer" },
+  [ClassEnum.NIGHTBLADE]: { "name": "Nightblade", "skillLines": [SkillLineEnum.ASSASSINATION, SkillLineEnum.SHADOW, SkillLineEnum.SIPHONING], "color": "#DE5D83", "sourceUrl": "https://eso-hub.com/en/skills/nightblade" },
+  [ClassEnum.SORCERER]: { "name": "Sorcerer", "skillLines": [SkillLineEnum.DAEDRIC_SUMMONING, SkillLineEnum.DARK_MAGIC, SkillLineEnum.STORM_CALLING], "color": "#ccccff", "sourceUrl": "https://eso-hub.com/en/skills/sorcerer" },
+  [ClassEnum.TEMPLAR]: { "name": "Templar", "skillLines": [SkillLineEnum.AEDRIC_SPEAR, SkillLineEnum.DAWNS_WRATH, SkillLineEnum.RESTORING_LIGHT], "color": "yellow", "sourceUrl": "https://eso-hub.com/en/skills/templar" },
+  [ClassEnum.WARDEN]: { "name": "Warden", "skillLines": [SkillLineEnum.ANIMAL_COMPANIONS, SkillLineEnum.GREEN_BALANCE, SkillLineEnum.WINTERS_EMBRACE], "color": "mediumseagreen", "sourceUrl": "https://eso-hub.com/en/skills/warden" }
 };
