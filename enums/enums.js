@@ -109,16 +109,3 @@ const ModifierEnum = Object.freeze({
   SymphonyOfBlades: 'SymphonyOfBlades',
   OzezansPlating: 'OzezansPlating',
 });
-
-const SetEnum = Object.freeze({
-  // Support sets with modifiers
-  PerfectedRoaringOpportunist: 'PerfectedRoaringOpportunist',
-  SpellPowerCure: 'SpellPowerCure',
-  PerfectedOlorime: 'PerfectedOlorime',
-  PerfectedSaxhleelChampion: 'PerfectedSaxhleelChampion',
-  MasterArchitect: 'MasterArchitect',
-  WarMachine: 'WarMachine',
-  PearlescentWardSet: 'PearlescentWardSet',
-  PowerfulAssaultSet: 'PowerfulAssaultSet',
-  LordWardenSet: 'LordWardenSet',
-});

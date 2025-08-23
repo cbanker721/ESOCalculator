@@ -8,13 +8,13 @@ const setsData = {
   [SetEnum.ArmorSetPenPassive]: { "name": "Armor-set Passive", "pen": 1487, "type": "dropdown", "options": [0, 1, 2, 3], "default": 0, tooltip: "Pen from armor sets like Arch Druid (1-piece), Ansuul's Torment, and Tideborn" },
   [SetEnum.Arena1Piece]: { "name": "Arena 1-piece", "pen": 1190, "pieces": 1, "tooltip": "Pen from arena weapons like Perfected Maelstrom staff" },
   [SetEnum.PerfectedWhorlOfTheDepths]: { "name": "Perfected Whorl of the Depths", "pen": 0, "critDamage": 0, "pieces": 5 },
-  [SetEnum.TideKingGaze]: { "name": "Tide-King's Gaze", "pen": 1487, "pieces": 2 },
-  [SetEnum.AnsuulsTorment]: { "name": "Ansuul's Torment", "pen": 0, "critDamage": 0, "pieces": 5 }
+  [SetEnum.TideKingGaze]: { "name": "Tide-King's Gaze", "pen": 1487, "pieces": 5, "hide": true },
+  [SetEnum.AnsuulsTorment]: { "name": "Ansuul's Torment", "pen": 1487, "critDamage": 0, "pieces": 5, "hide": true },
 };
 
 const mythicsData = {
   [SetEnum.HarpoonerKilt]: { "name": "Harpooner's Kilt", "critDamage": 10, "pieces": 1 },
-  [SetEnum.VelothiUrMage]: { "name": "Velothi Amulet", "pen": 1650, "pieces": 1, "triggers": [{ "key": ModifierEnum.MinorForce, "action": "check" }] }
+  [SetEnum.VelothiUrMage]: { "name": "Velothi Amulet", "pen": 1650, "default": "on", "pieces": 1, "triggers": [{ "key": ModifierEnum.MinorForce, "action": "check" }] }
 };
 
 const supportSetsData = {

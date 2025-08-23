@@ -4,7 +4,7 @@
  * @typedef {import('./enums.js').SkillLineEnum} SkillLineEnum
  */
 
-const SetsEnum = Object.freeze({
+const SetEnum = Object.freeze({
   // Player DPS sets
   
   Spriggan: "Spriggan",
@@ -34,4 +34,13 @@ const SetsEnum = Object.freeze({
   ArchDruid: "ArchDruid",
   TurningTide: "TurningTide",
   Yolnahkriin: "Yolnahkriin",
+  PerfectedRoaringOpportunist: 'PerfectedRoaringOpportunist',
+  SpellPowerCure: 'SpellPowerCure',
+  PerfectedOlorime: 'PerfectedOlorime',
+  PerfectedSaxhleelChampion: 'PerfectedSaxhleelChampion',
+  MasterArchitect: 'MasterArchitect',
+  WarMachine: 'WarMachine',
+  PearlescentWardSet: 'PearlescentWardSet',
+  PowerfulAssaultSet: 'PowerfulAssaultSet',
+  LordWardenSet: 'LordWardenSet',
 });

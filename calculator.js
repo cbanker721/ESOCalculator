@@ -103,19 +103,19 @@ function populateConfigDropdowns() {
 
   // Populate Mundus
   const mundusSelect = document.getElementById("mundusSelect");
-  Object.keys(data.mundus).sort().forEach(mundusKey => {
+  Object.keys(data.mundusData).sort().forEach(mundusKey => {
     const opt = document.createElement("option");
     opt.value = mundusKey;
-    opt.textContent = data.mundus[mundusKey].name;
+    opt.textContent = data.mundusData[mundusKey].name;
     mundusSelect.appendChild(opt);
   });
 
   // Populate Skill Lines
   const mythicSelect = document.getElementById("mythicSelect");
-  Object.keys(data.mythics).forEach(mythicKey => {
+  Object.keys(data.mythicsData).forEach(mythicKey => {
     const opt = document.createElement("option");
     opt.value = mythicKey;
-    opt.textContent = data.mythics[mythicKey].name;
+    opt.textContent = data.mythicsData[mythicKey].name;
     mythicSelect.appendChild(opt);
   });
 
@@ -224,13 +224,13 @@ function populateTables() {
 
   const categoryConfig = {
     universal: { limit: Infinity, name: "Universal" },
-    racialPassives: { limit: Infinity, name: "Racial" },
-    sets: { limit: 2, name: "Item Sets" },
-    mythics: { limit: 1, name: "Mythics" },
-    mundus: { limit: 1, name: "Mundus Stones" },
-    supportSets: { limit: Infinity, name: "Support Sets" },
-    modifiers: { limit: Infinity, name: "Modifiers" },
-    cp: { limit: Infinity, name: "Champion Points" },
+    racialPassivesData: { limit: Infinity, name: "Racial" },
+    setsData: { limit: 2, name: "Item Sets" },
+    mythicsData: { limit: 1, name: "Mythics" },
+    mundusData: { limit: 1, name: "Mundus Stones" },
+    supportSetsData: { limit: Infinity, name: "Support Sets" },
+    modifiersData: { limit: Infinity, name: "Modifiers" },
+    cpData: { limit: Infinity, name: "Champion Points" },
     classSkills: { limit: Infinity, name: "Class Skills" },
     classPassives: { limit: Infinity, name: "Class Passives" },
     weaponPassives: { limit: Infinity, name: "Weapon Passives" },
@@ -238,7 +238,7 @@ function populateTables() {
   };
 
   const categoryOrder = [
-    'universal', 'modifiers', 'armorPassives', 'mythics','classPassives', 'racialPassives', 'sets', 'supportSets', 'cp', 'classSkills', 'weaponPassives', 'mundus'
+    'universal', 'modifiersData', 'armorPassives', 'mythicsData','classPassives', 'racialPassivesData', 'setsData', 'supportSetsData', 'cpData', 'classSkills', 'weaponPassives', 'mundusData'
   ];
 
   categoryOrder.forEach(categoryKey => {
@@ -276,6 +276,7 @@ function populateTables() {
 
     // Filter items for each table
     const penItems = Object.entries(items).filter(([, item]) => {
+      if (item.hide !== undefined || item.hide === true) return false;
       if (item.pen === undefined || item.pen === 0) return false;
       if (!skillTypeFilter) return true; // Not a skill category, include it
       const skillLine = data.skillLines[item.skillLine];
@@ -284,6 +285,7 @@ function populateTables() {
              (!skillOrPassiveFilter || item.skillOrPassive === skillOrPassiveFilter);
     });
     const critItems = Object.entries(items).filter(([, item]) => {
+      if (item.hide !== undefined || item.hide === true) return false;
       if (item.critDamage === undefined || item.critDamage === 0) return false;
       if (!skillTypeFilter) return true; // Not a skill category, include it
       const skillLine = data.skillLines[item.skillLine];

@@ -42,20 +42,20 @@ const data = {
   },
 };
 
-data.mundus = mundusData;
+data.mundusData = mundusData;
 data.alliances = allianceData;
 data.races = raceData;
-data.sets = setsData;
-data.mythics = mythicsData;
-data.supportSets = supportSetsData;
+data.setsData = Object.values(setsData);
+data.mythicsData = Object.values(mythicsData);
+data.supportSetsData = Object.values(supportSetsData);
 data.classes = classesData;
 data.skillLines = skillLinesData;
-data.cp = cpData;
-data.racialPassives = racialPassivesData;
+data.cpData = cpData;
+data.racialPassivesData = racialPassivesData;
 data.skills = skillsData;
-data.modifiers = modifiersData;
+data.modifiersData = Object.values(modifiersData);
 
 // Add Piercing to universal by reference, but with its own default
-data.universal.Piercing = { ...data.cp[CpEnum.Piercing], "default": "on" };
+data.universal.Piercing = { ...data.cpData[CpEnum.Piercing], "default": "on" };
 // Remove Piercing from cp so it doesn't render in the CP category
-delete data.cp[CpEnum.Piercing];
+delete data.cpData[CpEnum.Piercing];
