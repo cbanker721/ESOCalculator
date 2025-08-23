@@ -8,7 +8,7 @@
  * Represents a player's build configuration, including their role,
  * skill lines, and equipped gear sets.
  */
-class Player {
+class RoleTemplate {
   /**
    * Creates an instance of a Player.
    * @param {object} config - The player's configuration.

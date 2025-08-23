@@ -1,5 +1,5 @@
-const playerTemplates = {
-    "SPCHealer1": new Player(
+const rolesTemplates = {
+    "SPCHealer1": new RoleTemplate(
         {
             role: RoleEnum.HEALER,
             description: "SPC Healer",
@@ -11,7 +11,7 @@ const playerTemplates = {
             sets: [SetEnum.PillagersProfit, SetEnum.SpellPowerCure]
         }
     ),
-    "ROJOHealer1": new Player(
+    "ROJOHealer1": new RoleTemplate(
         {
             role: RoleEnum.HEALER,
             description: "ROJO Healer",
@@ -23,7 +23,7 @@ const playerTemplates = {
             sets: [SetEnum.RoaringOpportunist, SetEnum.JorvuldsGuidance]
         }
     ),
-    "MainTank1": new Player(
+    "MainTank1": new RoleTemplate(
         {
             role: RoleEnum.TANK,
             description: "Main Tank",
@@ -35,7 +35,7 @@ const playerTemplates = {
             sets: [SetEnum.TurningTide, SetEnum.PearlescentWardSet]
         }
     ),
-    "OffTank1": new Player(
+    "OffTank1": new RoleTemplate(
         {
             role: RoleEnum.TANK,
             description: "Off Tank",
