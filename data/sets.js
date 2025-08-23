@@ -23,7 +23,7 @@ const mythicsData = {
   [SetEnum.PearlsOfEhlnofey]: {
     name: "Pearls of Ehlnofey",
     modifiers: [
-      { modifier: ModifierEnum.MajorHeroism, rating: 3 }
+      { modifier: ModifierEnum.MajorHeroism, rating: 3, scope: ScopeEnum.SELF }
     ],
     pieces: 1
   }
@@ -38,7 +38,7 @@ const supportSetsData = {
     [SetEnum.PerfectedRoaringOpportunist]: {
     name: "Perfected Roaring Opportunist",
     modifiers: [
-      { modifier: ModifierEnum.MajorSlayer, rating: 2 }
+      { modifier: ModifierEnum.MajorSlayer, rating: 2, scope: ScopeEnum.GROUP }
     ],
     notes: "Assumes Jorvuld's Guidance is used",
     pieces: 5
@@ -46,56 +46,56 @@ const supportSetsData = {
   [SetEnum.SpellPowerCure]: {
     name: "Spell Power Cure",
     modifiers: [
-      { modifier: ModifierEnum.MajorCourage, rating: 3 }
+      { modifier: ModifierEnum.MajorCourage, rating: 3, scope: ScopeEnum.GROUP }
     ],
     pieces: 5
   },
   [SetEnum.PerfectedOlorime]: {
     name: "Perfected Vestment of Olorime",
     modifiers: [
-      { modifier: ModifierEnum.MajorCourage, rating: 3 }
+      { modifier: ModifierEnum.MajorCourage, rating: 3, scope: ScopeEnum.GROUP }
     ],
     pieces: 5
   },
   [SetEnum.PerfectedSaxhleelChampion]: {
     name: "Perfected Saxhleel Champion",
     modifiers: [
-      { modifier: ModifierEnum.MajorForce, rating: 2 }
+      { modifier: ModifierEnum.MajorForce, rating: 2, scope: ScopeEnum.GROUP }
     ],
     pieces: 5
   },
   [SetEnum.MasterArchitect]: {
     name: "Master Architect",
     modifiers: [
-      { modifier: ModifierEnum.MajorSlayer, rating: 1 }
+      { modifier: ModifierEnum.MajorSlayer, rating: 1, scope: ScopeEnum.GROUP }
     ],
     pieces: 5
   },
   [SetEnum.WarMachine]: {
     name: "War Machine",
     modifiers: [
-      { modifier: ModifierEnum.MajorSlayer, rating: 1 }
+      { modifier: ModifierEnum.MajorSlayer, rating: 1, scope: ScopeEnum.GROUP }
     ],
     pieces: 5
   },
   [SetEnum.PearlescentWardSet]: {
     name: "Pearlescent Ward",
     modifiers: [
-      { modifier: ModifierEnum.PearlescentWard, rating: 3 }
+      { modifier: ModifierEnum.PearlescentWard, rating: 3, scope: ScopeEnum.GROUP }
     ],
     pieces: 5
   },
   [SetEnum.PowerfulAssaultSet]: {
     name: "Powerful Assault",
     modifiers: [
-      { modifier: ModifierEnum.PowerfulAssault, rating: 3 }
+      { modifier: ModifierEnum.PowerfulAssault, rating: 3, scope: ScopeEnum.GROUP }
     ],
     pieces: 5
   },
   [SetEnum.LordWardenSet]: {
     name: "Lord Warden",
     modifiers: [
-      { modifier: ModifierEnum.LordWarden, rating: 3 }
+      { modifier: ModifierEnum.LordWarden, rating: 3, scope: ScopeEnum.GROUP }
     ],
     pieces: 2
   },
@@ -107,56 +107,56 @@ const supportSetsData = {
   [SetEnum.SymphonyOfBladesSet]: {
     name: "Symphony of Blades",
     modifiers: [
-      { modifier: ModifierEnum.SymphonyOfBlades, rating: 3 }
+      { modifier: ModifierEnum.SymphonyOfBlades, rating: 3, scope: ScopeEnum.GROUP }
     ],
     pieces: 2
   },
   [SetEnum.OzezanTheInferno]: {
     name: "Ozezan the Inferno",
     modifiers: [
-      { modifier: ModifierEnum.OzezansPlating, rating: 3 }
+      { modifier: ModifierEnum.OzezansPlating, rating: 3, scope: ScopeEnum.GROUP }
     ],
     pieces: 2
   },
   [SetEnum.ArchDruid]: {
     name: "Archdruid Devyric",
     modifiers: [
-      { modifier: ModifierEnum.MajorVulnerability, rating: 1 }
+      { modifier: ModifierEnum.MajorVulnerability, rating: 1, scope: ScopeEnum.GROUP }
     ],
     pieces: 2
   },
   [SetEnum.TurningTide]: {
     name: "Turning Tide",
     modifiers: [
-      { modifier: ModifierEnum.MajorVulnerability, rating: 1 }
+      { modifier: ModifierEnum.MajorVulnerability, rating: 1, scope: ScopeEnum.GROUP }
     ],
     pieces: 5
   },
   [SetEnum.Yolnahkriin]: {
     name: "Claw of Yolnahkriin",
     modifiers: [
-      { modifier: ModifierEnum.MinorCourage, rating: 3 }
+      { modifier: ModifierEnum.MinorCourage, rating: 3, scope: ScopeEnum.GROUP }
     ],
     pieces: 5
   },
   [SetEnum.PillagersProfit]: {
     name: "Pillager's Profit",
     modifiers: [
-      { modifier: ModifierEnum.MajorSlayer, rating: 1 }
+      { modifier: ModifierEnum.MajorSlayer, rating: 1, scope: ScopeEnum.GROUP }
     ],
     pieces: 5
   },
   [SetEnum.BaronZaudrus]: {
     name: "Baron Zaudrus",
     modifiers: [
-      { modifier: ModifierEnum.BaronZaudrusDebuff, rating: 2 }
+      { modifier: ModifierEnum.BaronZaudrusDebuff, rating: 2, scope: ScopeEnum.GROUP }
     ],
     pieces: 2
   },
   [SetEnum.Nazaray]: {
     name: "Nazaray",
     modifiers: [
-      { modifier: ModifierEnum.NazarayEffect, rating: 2 }
+      { modifier: ModifierEnum.NazarayEffect, rating: 2, scope: ScopeEnum.GROUP }
     ],
     pieces: 2
   },

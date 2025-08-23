@@ -1,14 +1,23 @@
 /**
  * @typedef {import('../enums/enums.js').ModifierEnum} ModifierEnum
+ * @typedef {import('../enums/enums.js').ScopeEnum} ScopeEnum
  */
+
+const ScopeEnum = Object.freeze({
+  SELF: "SELF",
+  GROUP: "GROUP",
+  LIMITED: "LIMITED",
+});
+
 class ModifierRating { // Gemini: DO NOT MOVE THIS CLASS TO A NEW FILE
   /**
    * Creates an instance of ModifierRating.
    * @param {object} config
    * @param {ModifierEnum} config.modifier The enum key for the modifier.
    * @param {number} config.rating An integer from 1 to 3 representing the modifier's reliability.
+   * @param {ScopeEnum} [config.scope=ScopeEnum.GROUP] The scope of the modifier's application.
    */
-  constructor({ modifier, rating }) {
+  constructor({ modifier, rating, scope = ScopeEnum.GROUP }) {
     /**
      * The specific modifier being applied.
      * @type {ModifierEnum}
@@ -20,6 +29,12 @@ class ModifierRating { // Gemini: DO NOT MOVE THIS CLASS TO A NEW FILE
      * @type {number}
      */
     this.rating = rating;
+
+    /**
+     * The scope of the modifier's application (e.g., Self, Group).
+     * @type {ScopeEnum}
+     */
+    this.scope = scope;
   }
 }
 
