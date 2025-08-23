@@ -15,6 +15,13 @@ const CpEnum = Object.freeze({
   Piercing: "Piercing",
 });
 
+const RoleEnum = Object.freeze({
+  DPS: "DPS",
+  SUPPORT_DPS: "SUPPORT_DPS",
+  HEALER: "HEALER",
+  TANK: "TANK",
+});
+
 const ModifierEnum = Object.freeze({
   // Penetration Debuffs
   MajorBreach: 'MajorBreach',
