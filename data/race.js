@@ -13,7 +13,7 @@ const raceData = {
   [RaceEnum.IMPERIAL]: { "name": "Imperial", "passives": [], "alliance": AllianceEnum.CYRODIIL, "remark": "Awesome" },
   [RaceEnum.KHAJIIT]: { "name": "Khajiit", "passives": [RacialPassiveEnum.FELINE_AMBUSH], "alliance": AllianceEnum.ALDMERI_DOMINION, "remark": "Furries" },
   [RaceEnum.NORD]: { "name": "Nord", "passives": [], "alliance": AllianceEnum.EBONHEART_PACT, "remark": "Champs" },
-  [RaceEnum.ORC]: { "name": "Orc", "passives": [], "alliance": AllianceEnum.DAGGERFALL_COVENANT, "remark": "Droppings" },
-  [RaceEnum.REDGUARD]: { "name": "Redguard", "passives": [], "alliance": AllianceEnum.DAGGERFALL_COVENANT, "remark": "Unimaginative" },
+  [RaceEnum.ORC]: { "name": "Orc", "passives": [], "alliance": AllianceEnum.DAGGERFALL_COVENANT, "remark": "Dirty" },
+  [RaceEnum.REDGUARD]: { "name": "Redguard", "passives": [], "alliance": AllianceEnum.DAGGERFALL_COVENANT, "remark": "Crude" },
   [RaceEnum.WOOD_ELF]: { "name": "Wood Elf", "passives": [RacialPassiveEnum.HUNTERS_EYE], "alliance": AllianceEnum.ALDMERI_DOMINION, "remark": "Cannibals"  },
 };
