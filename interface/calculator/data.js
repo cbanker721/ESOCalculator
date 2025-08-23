@@ -28,27 +28,6 @@ const rosterDefaultExpectations = {
   [CpEnum.Piercing]: passiveCPData[CpEnum.Piercing]
 }
 
-const calculatorDefaultState = {
-  // From cp.js
-  [CpEnum.FightingFinesse]: true,
-  [CpEnum.ForceOfNature]: 0,
-  [CpEnum.PIERCING]: true,
-
-  [EnchantEnum.INFUSED_CRUSHER]: true,
-
-  // From sets.js
-  [SetEnum.ArmorSetPenPassive]: 0,
-  [SetEnum.VelothiUrMage]: true,
-  [SetEnum.LucentEchoes]: true,
-
-  [SkillEnum.TWIN_BLADE_BLUNT_AXES]: 0,
-  [SkillEnum.TWIN_BLADE_BLUNT_MACES]: 0,
-
-  [SkillEnum.CONCENTRATION]: 1,
-  [SkillEnum.DEXTERITY]: 6,
-
-  [SkillEnum.SPLINTERED_SECRETS]: 2,
-};
 
 const calculatorUiConfig = {
   [SpecialModifierEnum.ARMOR_SET_PEN_PASSIVE]: { "name": "Armor-set Passive", "pen": 1487, "type": "dropdown", "range": [0, 1, 2, 3], tooltip: "Pen from armor sets like Arch Druid (1-piece), Ansuul's Torment, and Tideborn" },

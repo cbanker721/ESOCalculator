@@ -344,7 +344,7 @@ function createRow(tbody, item, statType, category, key, limit, categoryInfo) {
       option.textContent = optValue;
       inputElement.appendChild(option);
     });
-    inputElement.value = item.default || 0;
+    inputElement.value = computeDefaultState(key) || 0;
 
     const totalValueSpan = document.createElement('span');
     valueCell.appendChild(totalValueSpan);
@@ -363,7 +363,7 @@ function createRow(tbody, item, statType, category, key, limit, categoryInfo) {
     valueCell.textContent = item[statType];
     inputElement = document.createElement('input');
     inputElement.type = 'checkbox';
-    inputElement.checked = item.default === true;
+    inputElement.checked = computeDefaultState(key) === true;
     if (limit < Infinity) {
       inputElement.addEventListener('change', () => enforceLimit(category, limit));
     }
@@ -443,6 +443,10 @@ function calculate() {
   critEl.style.color = critTotal >= critTarget ? 'lightgreen' : '#ffcc00';
 }
 
+function computeDefaultState(key) {
+  return overrideState[key]?.default || calculatorUiConfig[key]?.default;  
+}
+
 function updateClassSkillsBasedOnSelection() {
   const selectedSkillLines = new Set();
   ['mainSkillLineSelect', 'skillLine2Select', 'skillLine3Select'].forEach(id => {
@@ -457,7 +461,7 @@ function updateClassSkillsBasedOnSelection() {
   classSkillInputs.forEach(input => {
     const key = input.dataset.key;
     const skillData = skillsData[key];
-    const defaultState = calculatorUiConfig[key]?.default;
+    const defaultState = computeDefaultState(key);
     if (!skillData || !skillData.skillLine) return;
 
     const isSelected = selectedSkillLines.has(skillData.skillLine);
