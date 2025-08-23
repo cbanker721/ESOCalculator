@@ -222,95 +222,73 @@ function populateTables() {
   penTbody.innerHTML = '';
   critTbody.innerHTML = '';
 
-  const categoryConfig = {
-    universal: { limit: Infinity, name: "Universal" },
-    racialPassivesData: { limit: Infinity, name: "Racial" },
-    setsData: { limit: 2, name: "Item Sets" },
-    mythicsData: { limit: 1, name: "Mythics" },
-    mundusData: { limit: 1, name: "Mundus Stones" },
-    supportSetsData: { limit: Infinity, name: "Support Sets" },
-    modifiersData: { limit: Infinity, name: "Modifiers" },
-    cpData: { limit: Infinity, name: "Champion Points" },
-    classSkills: { limit: Infinity, name: "Class Skills" },
-    classPassives: { limit: Infinity, name: "Class Passives" },
-    weaponPassives: { limit: Infinity, name: "Weapon Passives" },
-    armorPassives: { limit: Infinity, name: "Armor Passives" }
-  };
 
-  const categoryOrder = [
-    'universal', 'modifiersData', 'armorPassives', 'mythicsData','classPassives', 'racialPassivesData', 'setsData', 'supportSetsData', 'cpData', 'classSkills', 'weaponPassives', 'mundusData'
-  ];
+  const classSkills = Object.fromEntries(Object.entries(skillsData).filter(([_, value]) => value.categorization === SkillTypeEnum.CLASS_SKILL));
+  const classPassives = Object.fromEntries(Object.entries(skillsData).filter(([_, value]) => value.categorization === SkillTypeEnum.CLASS_PASSIVE));
+  const weaponPassives = Object.fromEntries(Object.entries(skillsData).filter(([_, value]) => value.categorization === SkillTypeEnum.WEAPON_PASSIVE));
+  const armorPassives = Object.fromEntries(Object.entries(skillsData).filter(([_, value]) => value.categorization === SkillTypeEnum.ARMOUR_PASSIVE));
 
-  categoryOrder.forEach(categoryKey => {
-    const category = categoryConfig[categoryKey];
-    let items;
-    let skillTypeFilter = null;
-    let skillOrPassiveFilter = null;
+  const categoryRenderConfig = {
+    [RenderCategoryEnum.UNIVERSAL]: { limit: Infinity, name: "Universal", dataStore: rosterDefaultExpectations },
+    [RenderCategoryEnum.RACIAL_PASSIVES]: { limit: Infinity, name: "Racial", dataStore: racialPassivesData },
+    [RenderCategoryEnum.PERSONAL_SETS]: { limit: 2, name: "Item Sets", dataStore: setsData },
+    [RenderCategoryEnum.MYTHICS]: { limit: 1, name: "Mythics", dataStore: mythicsData },
+    [RenderCategoryEnum.MUNDUS_STONES]: { limit: 1, name: "Mundus Stones", dataStore: mundusData },
+    [RenderCategoryEnum.SUPPORT_SETS]: { limit: Infinity, name: "Support Sets", dataStore: supportSetsData },
+    [RenderCategoryEnum.MODIFIERS]: { limit: Infinity, name: "Modifiers", dataStore: modifiersData },
+    [RenderCategoryEnum.CHAMPION_POINTS]: { limit: Infinity, name: "Champion Points", dataStore: cpData },
+    [RenderCategoryEnum.CLASS_SKILLS]: { limit: Infinity, name: "Class Skills", dataStore: classSkills },
+    [RenderCategoryEnum.CLASS_PASSIVES]: { limit: Infinity, name: "Class Passives", dataStore: classPassives },
+    [RenderCategoryEnum.WEAPON_PASSIVES]: { limit: Infinity, name: "Weapon Passives", dataStore: weaponPassives },
+    [RenderCategoryEnum.ARMOUR_PASSIVES]: { limit: Infinity, name: "Armour Passives", dataStore: armorPassives }
+  }
 
-    switch (categoryKey) {
-      case 'classSkills':
-        items = data.skills;
-        skillTypeFilter = 'class';
-        skillOrPassiveFilter = 'skill';
-        break;
-      case 'classPassives':
-        items = data.skills;
-        skillTypeFilter = 'class';
-        skillOrPassiveFilter = 'passive';
-        break;
-      case 'weaponPassives':
-        items = data.skills;
-        skillTypeFilter = 'weapon';
-        skillOrPassiveFilter = 'passive';
-        break;
-      case 'armorPassives':
-        items = data.skills;
-        skillTypeFilter = 'armor';
-        skillOrPassiveFilter = 'passive';
-        break;
-      default:
-        items = data[categoryKey];
-    }
+  const categoryRenderOrder = [
+    RenderCategoryEnum.UNIVERSAL, RenderCategoryEnum.MODIFIERS, RenderCategoryEnum.ARMOUR_PASSIVES, RenderCategoryEnum.MYTHICS,
+    RenderCategoryEnum.CLASS_PASSIVES, RenderCategoryEnum.RACIAL_PASSIVES, RenderCategoryEnum.PERSONAL_SETS, RenderCategoryEnum.SUPPORT_SETS,
+    RenderCategoryEnum.CHAMPION_POINTS, RenderCategoryEnum.CLASS_SKILLS, RenderCategoryEnum.WEAPON_PASSIVES, RenderCategoryEnum.MUNDUS_STONES
+  ]
+
+  categoryRenderOrder.forEach(categoryKey => {
+    const category = categoryRenderConfig[categoryKey];
+    let items = category.dataStore;
     
     if (!items) return;
 
-    // Filter items for each table
-    const penItems = Object.entries(items).filter(([, item]) => {
-      if (item.hide !== undefined || item.hide === true) return false;
-      if (item.pen === undefined || item.pen === 0) return false;
-      if (!skillTypeFilter) return true; // Not a skill category, include it
-      const skillLine = data.skillLines[item.skillLine];
-      return skillLine && 
-             skillLine.type === skillTypeFilter && 
-             (!skillOrPassiveFilter || item.skillOrPassive === skillOrPassiveFilter);
-    });
-    const critItems = Object.entries(items).filter(([, item]) => {
-      if (item.hide !== undefined || item.hide === true) return false;
-      if (item.critDamage === undefined || item.critDamage === 0) return false;
-      if (!skillTypeFilter) return true; // Not a skill category, include it
-      const skillLine = data.skillLines[item.skillLine];
-      return skillLine && 
-             skillLine.type === skillTypeFilter && 
-             (!skillOrPassiveFilter || item.skillOrPassive === skillOrPassiveFilter);
-    });
-
+    penItems = {};
+    critItems = {};
+    for (const [itemKey, item] of Object.entries(items)) {
+      if (item.hide !== undefined && item.hide === true) {
+        continue;
+      }
+      uiFriendlyItem = { ...item, ...calculatorUiConfig[itemKey] };
+      if (item.pen !== undefined && item.pen > 0) {
+        penItems[itemKey] = uiFriendlyItem;
+      } 
+      if (item.critDamage !== undefined && item.critDamage > 0) {
+        critItems[itemKey] = uiFriendlyItem;
+      }
+    }
+    
     // Populate penetration table
-    penItems.forEach(([key, item], index) => {
+    const penItemCollection = Object.entries(penItems);
+    penItemCollection.forEach(([key, item], index) => {
       const isFirst = index === 0;
       createRow(penTbody, item, 'pen', categoryKey, key, category.limit, {
         isFirstInCategory: isFirst,
         categoryName: category.name,
-        categoryRowCount: penItems.length
+        categoryRowCount: penItemCollection.length
       });
     });
 
     // Populate crit damage table
-    critItems.forEach(([key, item], index) => {
+    const critItemsCollection = Object.entries(critItems);
+    critItemsCollection.forEach(([key, item], index) => {
       const isFirst = index === 0;
       createRow(critTbody, item, 'critDamage', categoryKey, key, category.limit, {
         isFirstInCategory: isFirst,
         categoryName: category.name,
-        categoryRowCount: critItems.length
+        categoryRowCount: critItemsCollection.length
       });
     });
   });
@@ -358,15 +336,15 @@ function createRow(tbody, item, statType, category, key, limit, categoryInfo) {
     nameCell.appendChild(tooltipContainer);
   }
 
-  if (item.type === 'dropdown') {
+  if (item.range !== undefined) { // There is a range of values, use drop down
     inputElement = document.createElement('select');
-    item.options.forEach(optValue => {
+    item.range.forEach(optValue => {
       const option = document.createElement('option');
       option.value = optValue;
       option.textContent = optValue;
       inputElement.appendChild(option);
     });
-    inputElement.value = item.default;
+    inputElement.value = item.default || 0;
 
     const totalValueSpan = document.createElement('span');
     valueCell.appendChild(totalValueSpan);
@@ -385,7 +363,7 @@ function createRow(tbody, item, statType, category, key, limit, categoryInfo) {
     valueCell.textContent = item[statType];
     inputElement = document.createElement('input');
     inputElement.type = 'checkbox';
-    inputElement.checked = item.default === 'on';
+    inputElement.checked = item.default === true;
     if (limit < Infinity) {
       inputElement.addEventListener('change', () => enforceLimit(category, limit));
     }
@@ -437,7 +415,7 @@ function calculate() {
   // 2. Calculate from checkboxes in tables
   document.querySelectorAll('#penetration-tbody input:checked, #penetration-tbody select').forEach(el => {
     if (el.tagName.toLowerCase() === 'select') {
-        penTotal += parseInt(el.value, 10) * parseInt(el.dataset.value, 10);
+        penTotal += (parseInt(el.value, 10) || 0) * parseInt(el.dataset.value, 10);
     } else { // checkbox
         penTotal += parseInt(el.dataset.value, 10);
     }
@@ -446,7 +424,7 @@ function calculate() {
   document.querySelectorAll('#crit-damage-tbody input:checked, #crit-damage-tbody select').forEach(el => {
     if (el.tagName.toLowerCase() === 'select') {
         // Dropdown value is pieces/stacks * value per piece/stack
-        critTotal += parseInt(el.value, 10) * parseInt(el.dataset.value, 10);
+        critTotal += (parseInt(el.value, 10) || 0) * parseInt(el.dataset.value, 10);
     } else { // Checkbox is a flat value
         critTotal += parseInt(el.dataset.value, 10);
     }
@@ -478,20 +456,21 @@ function updateClassSkillsBasedOnSelection() {
 
   classSkillInputs.forEach(input => {
     const key = input.dataset.key;
-    const skillData = data.skills[key];
+    const skillData = skillsData[key];
+    const defaultState = calculatorUiConfig[key]?.default;
     if (!skillData || !skillData.skillLine) return;
 
     const isSelected = selectedSkillLines.has(skillData.skillLine);
     let valueChanged = false;
 
     if (input.tagName.toLowerCase() === 'select') {
-      const newValue = isSelected ? skillData.default : 0;
+      const newValue = isSelected ? defaultState : 0;
       if (input.value != newValue) {
         input.value = newValue;
         valueChanged = true;
       }
     } else { // checkbox
-      const newCheckedState = isSelected ? (skillData.default === 'on') : false;
+      const newCheckedState = isSelected ? (defaultState === true) : false;
       if (input.checked !== newCheckedState) {
         input.checked = newCheckedState;
       }

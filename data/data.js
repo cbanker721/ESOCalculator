@@ -37,10 +37,6 @@ const data = {
       "skillLine3": ""
     }
   },
-  "universal": {
-    [EnchantEnum.INFUSED_CRUSHER]: enchantData[EnchantEnum.INFUSED_CRUSHER],
-    [CpEnum.Piercing]: passiveCPData[CpEnum.Piercing]
-  }
 };
 
 data.mundusData = mundusData;
@@ -55,5 +51,5 @@ data.skillLines = skillLinesData;
 data.cpData = Object.values(cpData);
 data.passiveCPData = Object.values(passiveCPData);
 data.racialPassivesData = racialPassivesData;
-data.skills = skillsData;
+data.skillsData = Object.values(skillsData);
 data.modifiersData = Object.values(modifiersData);
