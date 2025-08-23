@@ -38,24 +38,22 @@ const data = {
     }
   },
   "universal": {
-    "InfusedCrusher": { "name": "Infused Crusher Enchant", "pen": 2108, "default": "on" }
-  },
+    [EnchantEnum.INFUSED_CRUSHER]: enchantData[EnchantEnum.INFUSED_CRUSHER],
+    [CpEnum.Piercing]: passiveCPData[CpEnum.Piercing]
+  }
 };
 
 data.mundusData = mundusData;
 data.alliances = allianceData;
 data.races = raceData;
+data.enchantData = Object.values(enchantData);
 data.setsData = Object.values(setsData);
 data.mythicsData = Object.values(mythicsData);
 data.supportSetsData = Object.values(supportSetsData);
 data.classes = classesData;
 data.skillLines = skillLinesData;
-data.cpData = cpData;
+data.cpData = Object.values(cpData);
+data.passiveCPData = Object.values(passiveCPData);
 data.racialPassivesData = racialPassivesData;
 data.skills = skillsData;
 data.modifiersData = Object.values(modifiersData);
-
-// Add Piercing to universal by reference, but with its own default
-data.universal.Piercing = { ...data.cpData[CpEnum.Piercing], "default": "on" };
-// Remove Piercing from cp so it doesn't render in the CP category
-delete data.cpData[CpEnum.Piercing];
