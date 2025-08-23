@@ -1,3 +1,40 @@
+// Gemini: Do not delete enums or move them out of the file unless instructed to do so. Ask first
+const MundusEnum = Object.freeze({
+  TheApprentice: "TheApprentice",
+  TheAtronach: "TheAtronach",
+  TheLady: "TheLady",
+  TheLord: "TheLord",
+  TheLover: "TheLover",
+  TheMage: "TheMage",
+  TheRitual: "TheRitual",
+  TheSerpent: "TheSerpent",
+  TheShadow: "TheShadow",
+  TheSteed: "TheSteed",
+  TheThief: "TheThief",
+  TheTower: "TheTower",
+  TheWarrior: "TheWarrior",
+});
+
+const AllianceEnum = Object.freeze({
+  DAGGERFALL_COVENANT: "DAGGERFALL_COVENANT",
+  ALDMERI_DOMINION: "ALDMERI_DOMINION",
+  EBONHEART_PACT: "EBONHEART_PACT",
+  CYRODIIL: "CYRODIIL",
+});
+
+const RaceEnum = Object.freeze({
+  ARGONIAN: "ARGONIAN",
+  BRETON: "BRETON",
+  DARK_ELF: "DARK_ELF",
+  HIGH_ELF: "HIGH_ELF",
+  IMPERIAL: "IMPERIAL",
+  KHAJIIT: "KHAJIIT",
+  NORD: "NORD",
+  ORC: "ORC",
+  REDGUARD: "REDGUARD",
+  WOOD_ELF: "WOOD_ELF",
+});
+
 const ClassEnum = Object.freeze({
   ARCANIST: "ARCANIST",
   DRAGONKNIGHT: "DRAGONKNIGHT",
@@ -69,9 +106,12 @@ const ModifierEnum = Object.freeze({
   MajorAegis: 'MajorAegis',
   MinorAegis: 'MinorAegis',
   LordWarden: 'LordWarden',
+  SymphonyOfBlades: 'SymphonyOfBlades',
+  OzezansPlating: 'OzezansPlating',
 });
 
 const SetEnum = Object.freeze({
+  // Support sets with modifiers
   PerfectedRoaringOpportunist: 'PerfectedRoaringOpportunist',
   SpellPowerCure: 'SpellPowerCure',
   PerfectedOlorime: 'PerfectedOlorime',
@@ -82,40 +122,3 @@ const SetEnum = Object.freeze({
   PowerfulAssaultSet: 'PowerfulAssaultSet',
   LordWardenSet: 'LordWardenSet',
 });
-
-const MundusEnum = Object.freeze({
-  TheApprentice: "TheApprentice",
-  TheAtronach: "TheAtronach",
-  TheLady: "TheLady",
-  TheLord: "TheLord",
-  TheLover: "TheLover",
-  TheMage: "TheMage",
-  TheRitual: "TheRitual",
-  TheSerpent: "TheSerpent",
-  TheShadow: "TheShadow",
-  TheSteed: "TheSteed",
-  TheThief: "TheThief",
-  TheTower: "TheTower",
-  TheWarrior: "TheWarrior",
-});
-
-const AllianceEnum = Object.freeze({
-  DAGGERFALL_COVENANT: "DAGGERFALL_COVENANT",
-  ALDMERI_DOMINION: "ALDMERI_DOMINION",
-  EBONHEART_PACT: "EBONHEART_PACT",
-  CYRODIIL: "CYRODIIL",
-});
-
-const RaceEnum = Object.freeze({
-  ARGONIAN: "ARGONIAN",
-  BRETON: "BRETON",
-  DARK_ELF: "DARK_ELF",
-  HIGH_ELF: "HIGH_ELF",
-  IMPERIAL: "IMPERIAL",
-  KHAJIIT: "KHAJIIT",
-  NORD: "NORD",
-  ORC: "ORC",
-  REDGUARD: "REDGUARD",
-  WOOD_ELF: "WOOD_ELF",
-});
-

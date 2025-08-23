@@ -1,4 +1,10 @@
 /**
+ * @typedef {import('../enums/enums.js').RoleEnum} RoleEnum
+ * @typedef {import('../enums/enums.js').SkillLineEnum} SkillLineEnum
+ * @typedef {import('../enums/enums.js').SetEnum} SetEnum
+ */
+
+/**
  * Represents a player's build configuration, including their role,
  * skill lines, and equipped gear sets.
  */

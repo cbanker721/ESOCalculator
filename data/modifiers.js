@@ -1,9 +1,7 @@
 /**
- * Represents a modifier and its associated application frequency or reliability.
- * This class formalizes the structure for a modifier and its rating, ensuring
- * a consistent data shape throughout the application.
+ * @typedef {import('../enums/enums.js').ModifierEnum} ModifierEnum
  */
-class ModifierRating {
+class ModifierRating { // Gemini: DO NOT MOVE THIS CLASS TO A NEW FILE
   /**
    * Creates an instance of ModifierRating.
    * @param {object} config
@@ -24,7 +22,6 @@ class ModifierRating {
     this.rating = rating;
   }
 }
-
 
 const modifiersData = {
   // Penetration Debuffs
