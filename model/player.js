@@ -28,12 +28,19 @@ class Player {
     monsterSet = null,
     mythic = null,
     sets = [null, null],
+    description = "",
   }) {
     /**
      * The role of the player.
      * @type {RoleEnum}
      */
     this.role = role;
+
+    /**
+     * Description of the player.
+     * @type {RoleEnum}
+     */
+    this.description = description;
 
     /**
      * The first selected skill line.

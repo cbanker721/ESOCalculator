@@ -64,6 +64,10 @@ const ModifierEnum = Object.freeze({
   MajorBreach: 'MajorBreach',
   MinorBreach: 'MinorBreach',
 
+  // Ulti-gen Buffs
+  MajorHeroism: 'MajorHeroism',
+  MinorHeroism: 'MinorHeroism',
+
   // Critical Damage Buffs
   MajorForce: 'MajorForce',
   MinorForce: 'MinorForce',

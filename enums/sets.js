@@ -5,8 +5,18 @@
  */
 
 const SetEnum = Object.freeze({
+  // Support sets with modifiers
+  RoaringOpportunist: 'RoaringOpportunist',
+  SpellPowerCure: 'SpellPowerCure',
+  Olorime: 'Olorime',
+  SaxhleelChampion: 'SaxhleelChampion',
+  MasterArchitect: 'MasterArchitect',
+  WarMachine: 'WarMachine',
+  PearlescentWard: 'PearlescentWard',
+  PowerfulAssault: 'PowerfulAssault',
+  LordWardenSet: 'LordWardenSet',
+
   // Player DPS sets
-  
   Spriggan: "Spriggan",
   ShatteredFate: "ShatteredFate",
   AdvancingYokeda: "AdvancingYokeda",
@@ -14,13 +24,14 @@ const SetEnum = Object.freeze({
   MorasScribeThesis: "MorasScribeThesis",
   ArmorSetPenPassive: "ArmorSetPenPassive",
   Arena1Piece: "Arena1Piece",
-  PerfectedWhorlOfTheDepths: "PerfectedWhorlOfTheDepths",
+  WhorlOfTheDepths: "WhorlOfTheDepths",
   TideKingGaze: "TideKingGaze",
   AnsuulsTorment: "AnsuulsTorment",
 
   // Mythics
   HarpoonerKilt: "HarpoonerKilt",
   VelothiUrMage: "VelothiUrMage",
+  PearlsOfEhlnofey: "PearlsOfEhlnofey",
 
   // Other support sets
   ElementalCatalyst: "ElementalCatalyst",
@@ -34,13 +45,4 @@ const SetEnum = Object.freeze({
   ArchDruid: "ArchDruid",
   TurningTide: "TurningTide",
   Yolnahkriin: "Yolnahkriin",
-  PerfectedRoaringOpportunist: 'PerfectedRoaringOpportunist',
-  SpellPowerCure: 'SpellPowerCure',
-  PerfectedOlorime: 'PerfectedOlorime',
-  PerfectedSaxhleelChampion: 'PerfectedSaxhleelChampion',
-  MasterArchitect: 'MasterArchitect',
-  WarMachine: 'WarMachine',
-  PearlescentWardSet: 'PearlescentWardSet',
-  PowerfulAssaultSet: 'PowerfulAssaultSet',
-  LordWardenSet: 'LordWardenSet',
 });

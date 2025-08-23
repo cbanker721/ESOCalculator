@@ -62,6 +62,10 @@ const modifiersData = {
   [ModifierEnum.MajorProphecy]: { "name": "Major Prophecy", "spellCritRating": 2629 },
   [ModifierEnum.MinorProphecy]: { "name": "Minor Prophecy", "spellCritRating": 1314 },
 
+  // Ulti-gen Buffs
+  [ModifierEnum.MajorHeroism]: { "name": "Major Heroism", "notes": "Grants 3 Ultimate every 1.5 seconds." },
+  [ModifierEnum.MinorHeroism]: { "name": "Minor Heroism", "notes": "Grants 1 Ultimate every 1.5 seconds." },
+
   // Defensive & Set-specific Buffs
   [ModifierEnum.MajorProtection]: { "name": "Major Protection", "damageReductionPercent": 10 },
   [ModifierEnum.MinorProtection]: { "name": "Minor Protection", "damageReductionPercent": 5 },
