@@ -45,4 +45,9 @@ const SetEnum = Object.freeze({
   ArchDruid: "ArchDruid",
   TurningTide: "TurningTide",
   Yolnahkriin: "Yolnahkriin",
+
+  // Partial sets worn (e.g. 1-piece slimecraw, 4-piece Tideborn)
+  PartialCritSet: "1PieceCritSet",
+  PartialPenSet: "1PiecePenSet",
+  PartialMiscSet: "PartialSet",
 });

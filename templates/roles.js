@@ -8,7 +8,8 @@ const rolesTemplates = {
             skillLine3: SkillLineEnum.SIPHONING,
             monsterSet: SetEnum.SymphonyOfBladesSet,
             mythic: SetEnum.PearlsOfEhlnofey,
-            sets: [SetEnum.PillagersProfit, SetEnum.SpellPowerCure]
+            sets: [SetEnum.PillagersProfit, SetEnum.SpellPowerCure],
+            partialSets: []
         }
     ),
     "ROJOHealer1": new RoleTemplate(
@@ -20,7 +21,8 @@ const rolesTemplates = {
             skillLine3: SkillLineEnum.SIPHONING,
             monsterSet: SetEnum.OzezanTheInferno,
             mythic: undefined,
-            sets: [SetEnum.RoaringOpportunist, SetEnum.JorvuldsGuidance]
+            sets: [SetEnum.RoaringOpportunist, SetEnum.JorvuldsGuidance],
+            partialSets: []
         }
     ),
     "MainTank1": new RoleTemplate(
@@ -32,7 +34,8 @@ const rolesTemplates = {
             skillLine3: SkillLineEnum.DAEDRIC_SUMMONING,
             monsterSet: SetEnum.Nazaray,
             mythic: undefined,
-            sets: [SetEnum.TurningTide, SetEnum.PearlescentWardSet]
+            sets: [SetEnum.TurningTide, SetEnum.PearlescentWardSet],
+            partialSets: []
         }
     ),
     "OffTank1": new RoleTemplate(
@@ -44,7 +47,21 @@ const rolesTemplates = {
             skillLine3: SkillLineEnum.EARTHEN_HEART,
             monsterSet: SetEnum.BaronZaudrus,
             mythic: undefined,
-            sets: [SetEnum.Yolnahkriin, SetEnum.PowerfulAssaultSet]
+            sets: [SetEnum.Yolnahkriin, SetEnum.PowerfulAssaultSet],
+            partialSets: []
+        }
+    ),
+    "ParseDPS1": new RoleTemplate(
+        {
+            role: RoleEnum.DPS,
+            description: "Parse DPS",
+            skillLine1: SkillLineEnum.ARDENT_FLAME,
+            skillLine2: SkillLineEnum.ASSASSINATION,
+            skillLine3: SkillLineEnum.HERALD_OF_THE_TOME,
+            monsterSet: undefined,
+            mythic: SetEnum.VelothiUrMage,
+            sets: [SetEnum.WhorlOfTheDepths, SetEnum.TideKingGaze],
+            partialSets: [SetEnum.PartialCritSet]
         }
     ),
 }

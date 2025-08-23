@@ -18,7 +18,8 @@ class RoleTemplate {
    * @param {SkillLineEnum | null} [config.skillLine3=null] - The third selected skill line.
    * @param {SetEnum | null} [config.monsterSet=null] - The equipped monster set.
    * @param {SetEnum | null} [config.mythic=null] - The equipped mythic item.
-   * @param {Array<SetEnum | null>} [config.sets=[null, null]] - The two equipped 5-piece sets.
+   * @param {Array<SetEnum | null>} [config.sets=[null, null]] - The equipped complete sets
+   * @param {Array<SetEnum | null>} [config.sets=[null, null]] - The equipped partial sets
    */
   constructor({
     role,
@@ -28,6 +29,7 @@ class RoleTemplate {
     monsterSet = null,
     mythic = null,
     sets = [null, null],
+    partialSets = [],
     description = "",
   }) {
     /**
@@ -73,9 +75,15 @@ class RoleTemplate {
     this.mythic = mythic;
 
     /**
-     * An array containing the two main equipped 5-piece sets.
+     * An array containing the complete non-monster sets worn (e.g. two main equipped 5-piece sets)
      * @type {Array<SetEnum | null>}
      */
     this.sets = sets;
+
+    /**
+     * An array containing any partial sets worn (e.g. 1-piece slimecraw, 4-piece Tideborn))
+     * @type {Array<SetEnum | null>}
+     */
+    this.partialSets = partialSets
   }
 }

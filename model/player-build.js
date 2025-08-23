@@ -1,0 +1,5 @@
+class PlayerBuild {
+    constructor() {
+        // Placeholder
+    }
+}

@@ -12,9 +12,12 @@ const setsData = {
   [SetEnum.MorasScribeThesis]: { "name": "Mora's Scribe Thesis", "critDamage": 12, "pieces": 5 },
   [SetEnum.ArmorSetPenPassive]: { "name": "Armor-set Passive", "pen": 1487, "type": "dropdown", "options": [0, 1, 2, 3], "default": 0, tooltip: "Pen from armor sets like Arch Druid (1-piece), Ansuul's Torment, and Tideborn" },
   [SetEnum.Arena1Piece]: { "name": "Arena 1-piece", "pen": 1190, "pieces": 1, "tooltip": "Pen from arena weapons like Perfected Maelstrom staff" },
-  [SetEnum.PerfectedWhorlOfTheDepths]: { "name": "Perfected Whorl of the Depths", "pen": 0, "critDamage": 0, "pieces": 5 },
-    [SetEnum.TideKingGaze]: { "name": "Tide-King's Gaze", "pen": 1487, "pieces": 5, "hide": true },
+  [SetEnum.WhorlOfTheDepths]: { "name": "Perfected Whorl of the Depths", "pen": 0, "critDamage": 0, "pieces": 5 },
+  [SetEnum.TideKingGaze]: { "name": "Tide-King's Gaze", "pen": 1487, "pieces": 5, "hide": true },
   [SetEnum.AnsuulsTorment]: { "name": "Ansuul's Torment", "pen": 1487, "critDamage": 0, "pieces": 5, "hide": true },
+  [SetEnum.PartialCritSet]: { "name": "Partial Crit Set", "pieces": 1, "partial": true, "hide": true , tooltip: "Partial set that gives crit chance (e.g. 1-piece Slimecraw)" },
+  [SetEnum.PartialPenSet]: { "name": "Partial Pen Set", "pieces": 1, "partial": true, "hide": true , tooltip: "Partial set that gives pen (e.g. 1-piece Arch Druid)" },
+  [SetEnum.PartialMiscSet]: { "name": "Partial Misc Set", "pieces": 1, "partial": true, "hide": true , tooltip: "Partial set that gives some bonus (e.g. 1-piece Trainee)" },
 };
 
 const mythicsData = {
