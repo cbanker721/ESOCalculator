@@ -1,3 +1,31 @@
+/**
+ * Represents a modifier and its associated application frequency or reliability.
+ * This class formalizes the structure for a modifier and its rating, ensuring
+ * a consistent data shape throughout the application.
+ */
+class ModifierRating {
+  /**
+   * Creates an instance of ModifierRating.
+   * @param {object} config
+   * @param {ModifierEnum} config.modifier The enum key for the modifier.
+   * @param {number} config.rating An integer from 1 to 3 representing the modifier's reliability.
+   */
+  constructor({ modifier, rating }) {
+    /**
+     * The specific modifier being applied.
+     * @type {ModifierEnum}
+     */
+    this.modifier = modifier;
+
+    /**
+     * An integer from 1-3 representing the modifier's reliability.
+     * @type {number}
+     */
+    this.rating = rating;
+  }
+}
+
+
 const modifiersData = {
   // Penetration Debuffs
   [ModifierEnum.MajorBreach]: { "name": "Major Breach", "pen": 5948, "default": "on" },
@@ -24,6 +52,7 @@ const modifiersData = {
   [ModifierEnum.MajorCourage]: { "name": "Major Courage", "weaponAndSpellDamage": 430 },
   [ModifierEnum.MinorCourage]: { "name": "Minor Courage", "weaponAndSpellDamage": 215 },
   [ModifierEnum.PearlescentWard]: { "name": "Pearlescent Ward", "weaponAndSpellDamage": 180 },
+  [ModifierEnum.PowerfulAssault]: { "name": "Powerful Assault", "weaponAndSpellDamage": 307 },
   [ModifierEnum.MajorBrutality]: { "name": "Major Brutality", "weaponDamagePercent": 20 },
   [ModifierEnum.MinorBrutality]: { "name": "Minor Brutality", "weaponDamagePercent": 10 },
   [ModifierEnum.MajorSorcery]: { "name": "Major Sorcery", "spellDamagePercent": 20 },

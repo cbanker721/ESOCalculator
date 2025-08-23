@@ -16,12 +16,64 @@ const CpEnum = Object.freeze({
 });
 
 const ModifierEnum = Object.freeze({
-  MajorBreach: "MajorBreach",
-  MinorBreach: "MinorBreach",
-  MajorForce: "MajorForce",
-  MinorForce: "MinorForce",
-  MajorBrittle: "MajorBrittle",
-  MinorBrittle: "MinorBrittle",
+  // Penetration Debuffs
+  MajorBreach: 'MajorBreach',
+  MinorBreach: 'MinorBreach',
+
+  // Critical Damage Buffs
+  MajorForce: 'MajorForce',
+  MinorForce: 'MinorForce',
+  MajorBrittle: 'MajorBrittle',
+  MinorBrittle: 'MinorBrittle',
+
+  // Target Damage Taken Debuffs
+  MajorVulnerability: 'MajorVulnerability',
+  MinorVulnerability: 'MinorVulnerability',
+
+  // Damage Done Buffs
+  MajorBerserk: 'MajorBerserk',
+  MinorBerserk: 'MinorBerserk',
+  MajorSlayer: 'MajorSlayer',
+  MinorSlayer: 'MinorSlayer',
+  Empower: 'Empower',
+
+  // Weapon/Spell Damage Buffs
+  MajorCourage: 'MajorCourage',
+  MinorCourage: 'MinorCourage',
+  PearlescentWard: 'PearlescentWard',
+  PowerfulAssault: 'PowerfulAssault',
+  MajorBrutality: 'MajorBrutality',
+  MinorBrutality: 'MinorBrutality',
+  MajorSorcery: 'MajorSorcery',
+  MinorSorcery: 'MinorSorcery',
+
+  // Resource & Utility Buffs
+  WarHorn: 'WarHorn',
+
+  // Critical Chance Buffs
+  MajorSavagery: 'MajorSavagery',
+  MinorSavagery: 'MinorSavagery',
+  MajorProphecy: 'MajorProphecy',
+  MinorProphecy: 'MinorProphecy',
+
+  // Defensive Buffs
+  MajorProtection: 'MajorProtection',
+  MinorProtection: 'MinorProtection',
+  MajorAegis: 'MajorAegis',
+  MinorAegis: 'MinorAegis',
+  LordWarden: 'LordWarden',
+});
+
+const SetEnum = Object.freeze({
+  PerfectedRoaringOpportunist: 'PerfectedRoaringOpportunist',
+  SpellPowerCure: 'SpellPowerCure',
+  PerfectedOlorime: 'PerfectedOlorime',
+  PerfectedSaxhleelChampion: 'PerfectedSaxhleelChampion',
+  MasterArchitect: 'MasterArchitect',
+  WarMachine: 'WarMachine',
+  PearlescentWardSet: 'PearlescentWardSet',
+  PowerfulAssaultSet: 'PowerfulAssaultSet',
+  LordWardenSet: 'LordWardenSet',
 });
 
 const MundusEnum = Object.freeze({

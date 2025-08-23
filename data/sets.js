@@ -48,4 +48,59 @@ const supportSetsData = {
   [SupportSetsEnum.Alkosh]: { "name": "Roar of Alkosh", "pen": 6000 },
   [SupportSetsEnum.CrimsonOath]: { "name": "Crimson Oath's Rive", "pen": 3541 },
   [SupportSetsEnum.Tremorscale]: { "name": "Tremorscale", "pen": 2640 },
+    [SetEnum.PerfectedRoaringOpportunist]: {
+    name: "Perfected Roaring Opportunist",
+    modifiers: [
+      { modifier: ModifierEnum.MajorSlayer, rating: 2 }
+    ],
+    notes: "Assumes Jorvuld's Guidance is used"
+  },
+  [SetEnum.SpellPowerCure]: {
+    name: "Spell Power Cure",
+    modifiers: [
+      { modifier: ModifierEnum.MajorCourage, rating: 3 }
+    ]
+  },
+  [SetEnum.PerfectedOlorime]: {
+    name: "Perfected Vestment of Olorime",
+    modifiers: [
+      { modifier: ModifierEnum.MajorCourage, rating: 3 }
+    ]
+  },
+  [SetEnum.PerfectedSaxhleelChampion]: {
+    name: "Perfected Saxhleel Champion",
+    modifiers: [
+      { modifier: ModifierEnum.MajorForce, rating: 2 }
+    ]
+  },
+  [SetEnum.MasterArchitect]: {
+    name: "Master Architect",
+    modifiers: [
+      { modifier: ModifierEnum.MajorSlayer, rating: 1 }
+    ]
+  },
+  [SetEnum.WarMachine]: {
+    name: "War Machine",
+    modifiers: [
+      { modifier: ModifierEnum.MajorSlayer, rating: 1 }
+    ]
+  },
+  [SetEnum.PearlescentWardSet]: {
+    name: "Pearlescent Ward",
+    modifiers: [
+      { modifier: ModifierEnum.PearlescentWard, rating: 3 }
+    ]
+  },
+  [SetEnum.PowerfulAssaultSet]: {
+    name: "Powerful Assault",
+    modifiers: [
+      { modifier: ModifierEnum.PowerfulAssault, rating: 3 }
+    ]
+  },
+  [SetEnum.LordWardenSet]: {
+    name: "Lord Warden",
+    modifiers: [
+      { modifier: ModifierEnum.LordWarden, rating: 3 }
+    ]
+  }
 };
