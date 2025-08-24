@@ -1,18 +1,24 @@
 // Gemini: Do not delete enums or move them out of the file unless instructed to do so. Ask first
 const MundusEnum = Object.freeze({
-  TheApprentice: "TheApprentice",
-  TheAtronach: "TheAtronach",
-  TheLady: "TheLady",
-  TheLord: "TheLord",
-  TheLover: "TheLover",
-  TheMage: "TheMage",
-  TheRitual: "TheRitual",
-  TheSerpent: "TheSerpent",
-  TheShadow: "TheShadow",
-  TheSteed: "TheSteed",
-  TheThief: "TheThief",
-  TheTower: "TheTower",
-  TheWarrior: "TheWarrior",
+  THE_APPRENTICE: "MUNDUS_THE_APPRENTICE",
+  THE_ATRONACH: "MUNDUS_THE_ATRONACH",
+  THE_LADY: "MUNDUS_THE_LADY",
+  THE_LORD: "MUNDUS_THE_LORD",
+  THE_LOVER: "MUNDUS_THE_LOVER",
+  THE_MAGE: "MUNDUS_THE_MAGE",
+  THE_RITUAL: "MUNDUS_THE_RITUAL",
+  THE_SERPENT: "MUNDUS_THE_SERPENT",
+  THE_SHADOW: "MUNDUS_THE_SHADOW",
+  THE_STEED: "MUNDUS_THE_STEED",
+  THE_THIEF: "MUNDUS_THE_THIEF",
+  THE_TOWER: "MUNDUS_THE_TOWER",
+  THE_WARRIOR: "MUNDUS_THE_WARRIOR",
+});
+
+const ScopeEnum = Object.freeze({
+  SELF: "SELF",
+  GROUP: "GROUP",
+  LIMITED: "LIMITED",
 });
 
 const AllianceEnum = Object.freeze({
@@ -46,10 +52,10 @@ const ClassEnum = Object.freeze({
 });
 
 const CpEnum = Object.freeze({
-  FightingFinesse: "FightingFinesse",
-  Backstabber: "Backstabber",
-  ForceOfNature: "ForceOfNature",
-  Piercing: "Piercing",
+  FIGHTING_FINESSE: "CP_FIGHTING_FINESSE",
+  BACKSTABBER: "CP_BACKSTABBER",
+  FORCE_OF_NATURE: "CP_FORCE_OF_NATURE",
+  PIERCING: "CP_PIERCING",
 });
 
 const RoleEnum = Object.freeze({
@@ -61,55 +67,57 @@ const RoleEnum = Object.freeze({
 
 const ModifierEnum = Object.freeze({
   // Penetration Debuffs
-  MajorBreach: 'MajorBreach',
-  MinorBreach: 'MinorBreach',
+  MAJOR_BREACH: 'MODIFIER_MAJOR_BREACH',
+  MINOR_BREACH: 'MODIFIER_MINOR_BREACH',
+  RUNIC_SUNDER: 'MODIFIER_RUNIC_SUNDER',
+  CRYSTAL_WEAPON: 'MODIFIER_CRYSTAL_WEAPON',
 
   // Ulti-gen Buffs
-  MajorHeroism: 'MajorHeroism',
-  MinorHeroism: 'MinorHeroism',
+  MAJOR_HEROISM: 'MODIFIER_MAJOR_HEROISM',
+  MINOR_HEROISM: 'MODIFIER_MINOR_HEROISM',
 
   // Critical Damage Buffs
-  MajorForce: 'MajorForce',
-  MinorForce: 'MinorForce',
-  MajorBrittle: 'MajorBrittle',
-  MinorBrittle: 'MinorBrittle',
+  MAJOR_FORCE: 'MODIFIER_MAJOR_FORCE',
+  MINOR_FORCE: 'MODIFIER_MINOR_FORCE',
+  MAJOR_BRITTLE: 'MODIFIER_MAJOR_BRITTLE',
+  MINOR_BRITTLE: 'MODIFIER_MINOR_BRITTLE',
 
   // Target Damage Taken Debuffs
-  MajorVulnerability: 'MajorVulnerability',
-  MinorVulnerability: 'MinorVulnerability',
+  MAJOR_VULNERABILITY: 'MODIFIER_MAJOR_VULNERABILITY',
+  MINOR_VULNERABILITY: 'MODIFIER_MINOR_VULNERABILITY',
 
   // Damage Done Buffs
-  MajorBerserk: 'MajorBerserk',
-  MinorBerserk: 'MinorBerserk',
-  MajorSlayer: 'MajorSlayer',
-  MinorSlayer: 'MinorSlayer',
-  Empower: 'Empower',
+  MAJOR_BERSERK: 'MODIFIER_MAJOR_BERSERK',
+  MINOR_BERSERK: 'MODIFIER_MINOR_BERSERK',
+  MAJOR_SLAYER: 'MODIFIER_MAJOR_SLAYER',
+  MINOR_SLAYER: 'MODIFIER_MINOR_SLAYER',
+  EMPOWER: 'MODIFIER_EMPOWER',
 
   // Weapon/Spell Damage Buffs
-  MajorCourage: 'MajorCourage',
-  MinorCourage: 'MinorCourage',
-  PearlescentWard: 'PearlescentWard',
-  PowerfulAssault: 'PowerfulAssault',
-  MajorBrutality: 'MajorBrutality',
-  MinorBrutality: 'MinorBrutality',
-  MajorSorcery: 'MajorSorcery',
-  MinorSorcery: 'MinorSorcery',
+  MAJOR_COURAGE: 'MODIFIER_MAJOR_COURAGE',
+  MINOR_COURAGE: 'MODIFIER_MINOR_COURAGE',
+  PEARLESCENT_WARD: 'MODIFIER_PEARLESCENT_WARD',
+  POWERFUL_ASSAULT: 'MODIFIER_POWERFUL_ASSAULT',
+  MAJOR_BRUTALITY: 'MODIFIER_MAJOR_BRUTALITY',
+  MINOR_BRUTALITY: 'MODIFIER_MINOR_BRUTALITY',
+  MAJOR_SORCERY: 'MODIFIER_MAJOR_SORCERY',
+  MINOR_SORCERY: 'MODIFIER_MINOR_SORCERY',
 
   // Resource & Utility Buffs
-  WarHorn: 'WarHorn',
+  WAR_HORN: 'MODIFIER_WAR_HORN',
 
   // Critical Chance Buffs
-  MajorSavagery: 'MajorSavagery',
-  MinorSavagery: 'MinorSavagery',
-  MajorProphecy: 'MajorProphecy',
-  MinorProphecy: 'MinorProphecy',
+  MAJOR_SAVAGERY: 'MODIFIER_MAJOR_SAVAGERY',
+  MINOR_SAVAGERY: 'MODIFIER_MINOR_SAVAGERY',
+  MAJOR_PROPHECY: 'MODIFIER_MAJOR_PROPHECY',
+  MINOR_PROPHECY: 'MODIFIER_MINOR_PROPHECY',
 
   // Defensive Buffs
-  MajorProtection: 'MajorProtection',
-  MinorProtection: 'MinorProtection',
-  MajorAegis: 'MajorAegis',
-  MinorAegis: 'MinorAegis',
-  LordWarden: 'LordWarden',
-  SymphonyOfBlades: 'SymphonyOfBlades',
-  OzezansPlating: 'OzezansPlating',
+  MAJOR_PROTECTION: 'MODIFIER_MAJOR_PROTECTION',
+  MINOR_PROTECTION: 'MODIFIER_MINOR_PROTECTION',
+  MAJOR_AEGIS: 'MODIFIER_MAJOR_AEGIS',
+  MINOR_AEGIS: 'MODIFIER_MINOR_AEGIS',
+  LORD_WARDEN: 'MODIFIER_LORD_WARDEN',
+  SYMPHONY_OF_BLADES: 'MODIFIER_SYMPHONY_OF_BLADES',
+  OZEZANS_PLATING: 'MODIFIER_OZEZANS_PLATING',
 });

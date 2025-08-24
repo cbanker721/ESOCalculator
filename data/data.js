@@ -3,8 +3,8 @@ const data = {
     "heraldAssassinationArdentFlame": {
       "name": "Herald / Assassination / Ardent Flame",
       "race": RaceEnum.DARK_ELF,
-      "mundus": MundusEnum.TheThief,
-      "mythic": SetEnum.VelothiUrMage,
+      "mundus": MundusEnum.THE_THIEF,
+      "mythic": SetEnum.VELOTHI_UR_MAGE,
       "mainSkillLine": SkillLineEnum.HERALD_OF_THE_TOME,
       "skillLine2": SkillLineEnum.ASSASSINATION,
       "skillLine3": SkillLineEnum.ARDENT_FLAME
@@ -12,8 +12,8 @@ const data = {
     "heraldAssassinationAedricSpear": {
       "name": "Herald / Assassination / Aedric Spear",
       "race": RaceEnum.DARK_ELF,
-      "mundus": MundusEnum.TheThief,
-      "mythic": SetEnum.VelothiUrMage,
+      "mundus": MundusEnum.THE_THIEF,
+      "mythic": SetEnum.VELOTHI_UR_MAGE,
       "mainSkillLine": SkillLineEnum.HERALD_OF_THE_TOME,
       "skillLine2": SkillLineEnum.ASSASSINATION,
       "skillLine3": SkillLineEnum.AEDRIC_SPEAR
@@ -21,8 +21,8 @@ const data = {
     "heraldAssassinationGravelord": {
       "name": "Herald / Assassination / Gravelord",
       "race": RaceEnum.DARK_ELF,
-      "mundus": MundusEnum.TheThief,
-      "mythic": SetEnum.VelothiUrMage,
+      "mundus": MundusEnum.THE_THIEF,
+      "mythic": SetEnum.VELOTHI_UR_MAGE,
       "mainSkillLine": SkillLineEnum.HERALD_OF_THE_TOME,
       "skillLine2": SkillLineEnum.ASSASSINATION,
       "skillLine3": SkillLineEnum.GRAVE_LORD
@@ -30,7 +30,7 @@ const data = {
     "custom": {
       "name": "Custom",
       "race": RaceEnum.DARK_ELF,
-      "mundus": MundusEnum.TheThief,
+      "mundus": MundusEnum.THE_THIEF,
       "mythic": "",
       "mainSkillLine": "",
       "skillLine2": "",

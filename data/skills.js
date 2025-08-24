@@ -139,8 +139,16 @@ const racialPassivesData = {
 
 const skillsData = {
   // Class Skills
-  [SkillEnum.CRYSTAL_WEAPON]: { "name": "Crystal Weapon", "pen": 1000, "skillLine": SkillLineEnum.DARK_MAGIC, "class": ClassEnum.SORCERER, "categorization": SkillTypeEnum.CLASS_SKILL, "sourceUrl": "https://eso-hub.com/en/skills/sorcerer", "tooltip": "Reduces enemy armor by 1000.", "hyperlink": "https://en.uesp.net/wiki/Online:Crystal_Weapon" },
-  [SkillEnum.RUNIC_SUNDER]: { "name": "Runic Sunder", "pen": 2200, "skillLine": SkillLineEnum.HERALD_OF_THE_TOME, "class": ClassEnum.ARCANIST, "categorization": SkillTypeEnum.CLASS_SKILL, "sourceUrl": "https://eso-hub.com/en/skills/arcanist", "tooltip": "Reduces enemy armor by 2200.", "hyperlink": "https://en.uesp.net/wiki/Online:Rune_Blades" },
+  [SkillEnum.CRYSTAL_WEAPON]: { "name": "Crystal Weapon", "skillLine": SkillLineEnum.DARK_MAGIC, "class": ClassEnum.SORCERER, "categorization": SkillTypeEnum.CLASS_SKILL, "sourceUrl": "https://eso-hub.com/en/skills/sorcerer", "tooltip": "Reduces enemy armor by 1000.", "hyperlink": "https://en.uesp.net/wiki/Online:Crystal_Weapon",
+    modifiers: [
+      { modifier: ModifierEnum.CRYSTAL_WEAPON, rating: 3, scope: ScopeEnum.GROUP }
+    ],
+  },
+  [SkillEnum.RUNIC_SUNDER]: { "name": "Runic Sunder", "skillLine": SkillLineEnum.HERALD_OF_THE_TOME, "class": ClassEnum.ARCANIST, "categorization": SkillTypeEnum.CLASS_SKILL, "sourceUrl": "https://eso-hub.com/en/skills/arcanist", "tooltip": "Reduces enemy armor by 2200.", "hyperlink": "https://en.uesp.net/wiki/Online:Rune_Blades",
+    modifiers: [
+      { modifier: ModifierEnum.RUNIC_SUNDER, rating: 3, scope: ScopeEnum.GROUP }
+    ],
+   },
   // Class Passives
   [SkillEnum.ADVANCED_SPECIES]: { "name": "Adv. Species", "critDamage": 5, "range": [0, 1, 2, 3, 4, 5, 6], "skillLine": SkillLineEnum.ANIMAL_COMPANIONS, "class": ClassEnum.WARDEN, "categorization": SkillTypeEnum.CLASS_PASSIVE, "sourceUrl": "https://eso-hub.com/en/skills/warden", "tooltip": "Increase your Critical Damage by 5% for every Animal Companions ability slotted.", "hyperlink": "https://en.uesp.net/wiki/Online:Advanced_Species" },
   [SkillEnum.DISMEMBER]: { "name": "Dismember", "pen": 3271, "skillLine": SkillLineEnum.GRAVE_LORD, "class": ClassEnum.NECROMANCER, "categorization": SkillTypeEnum.CLASS_PASSIVE, "sourceUrl": "https://eso-hub.com/en/skills/necromancer", "tooltip": "While a Grave Lord ability is active, your Spell and Physical Penetration are increased by 3271.", "hyperlink": "https://en.uesp.net/wiki/Online:Dismember" },

@@ -1,7 +1,7 @@
 /**
  * @typedef {import('../enums/enums.js').RoleEnum} RoleEnum
  * @typedef {import('../enums/enums.js').SkillLineEnum} SkillLineEnum
- * @typedef {import('../enums/enums.js').SetEnum} SetEnum
+ * @typedef {import('../enums/sets.js').SetEnum} SetEnum
  */
 
 /**

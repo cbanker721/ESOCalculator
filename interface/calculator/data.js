@@ -25,7 +25,7 @@ const RenderCategoryEnum = Object.freeze({
 
 const rosterDefaultExpectations = {
   [EnchantEnum.INFUSED_CRUSHER]: enchantData[EnchantEnum.INFUSED_CRUSHER],
-  [CpEnum.Piercing]: passiveCPData[CpEnum.Piercing]
+  [CpEnum.PIERCING]: passiveCPData[CpEnum.PIERCING]
 }
 
 
@@ -33,24 +33,22 @@ const calculatorUiConfig = {
   [SpecialModifierEnum.ARMOR_SET_PEN_PASSIVE]: { "name": "Armor-set Passive", "pen": 1487, "type": "dropdown", "range": [0, 1, 2, 3], tooltip: "Pen from armor sets like Arch Druid (1-piece), Ansuul's Torment, and Tideborn" },
   [SpecialModifierEnum.ARENA_WEAPON_1_PIECE]: { "name": "Arena 1-piece", "pen": 1190, "pieces": 1, "tooltip": "Pen from arena weapons like Perfected Maelstrom staff" },
 
-  [CpEnum.FightingFinesse]: {"default": true },
-  [CpEnum.ForceOfNature]: {"default": 0 },
-  [CpEnum.Piercing]: {"default": true },
+  [CpEnum.FIGHTING_FINESSE]: {"default": true },
+  [CpEnum.FORCE_OF_NATURE]: {"default": 0 },
+  [CpEnum.PIERCING]: {"default": true },
 
   [EnchantEnum.INFUSED_CRUSHER]: {"default": true },
 
-  [ModifierEnum.MajorBreach]: { "default": true },
-  [ModifierEnum.MinorBreach]: { "default": true },
+  [ModifierEnum.MAJOR_BREACH]: { "default": true },
+  [ModifierEnum.MINOR_BREACH]: { "default": true },
 
   // Critical Damage Buffs
-  [ModifierEnum.MajorForce]: {"default": false },
-  [ModifierEnum.MinorForce]: {"default": true },
-  [ModifierEnum.MajorBrittle]: {"default": false },
-  [ModifierEnum.MinorBrittle]: {"default": true, },
+  [ModifierEnum.MINOR_FORCE]: {"default": true },
+  [ModifierEnum.MINOR_BRITTLE]: {"default": true, },
 
   // From sets.js
-  [SetEnum.VelothiUrMage]: {"default": true, "triggers": [{ "key": ModifierEnum.MinorForce, "action": "check" }], },
-  [SetEnum.LucentEchoes]: {"default": true },
+  [SetEnum.VELOTHI_UR_MAGE]: {"default": true, "triggers": [{ "key": ModifierEnum.MinorForce, "action": "check" }], },
+  [SetEnum.LUCENT_ECHOES]: {"default": true },
   [SkillEnum.TWIN_BLADE_BLUNT_AXES]: {"default": 0 },
   [SkillEnum.TWIN_BLADE_BLUNT_MACES]: {"default": 0 },
 

@@ -249,8 +249,8 @@ function populateTables() {
   }
 
   const categoryRenderOrder = [
-    RenderCategoryEnum.UNIVERSAL, RenderCategoryEnum.MODIFIERS, RenderCategoryEnum.ARMOUR_PASSIVES, RenderCategoryEnum.MYTHICS,
-    RenderCategoryEnum.CLASS_PASSIVES, RenderCategoryEnum.RACIAL_PASSIVES, RenderCategoryEnum.PERSONAL_SETS, RenderCategoryEnum.SUPPORT_SETS,
+    RenderCategoryEnum.UNIVERSAL, RenderCategoryEnum.MODIFIERS, RenderCategoryEnum.SUPPORT_SETS, RenderCategoryEnum.ARMOUR_PASSIVES, RenderCategoryEnum.MYTHICS,
+    RenderCategoryEnum.CLASS_PASSIVES, RenderCategoryEnum.RACIAL_PASSIVES, RenderCategoryEnum.PERSONAL_SETS,
     RenderCategoryEnum.CHAMPION_POINTS, RenderCategoryEnum.CLASS_SKILLS, RenderCategoryEnum.WEAPON_PASSIVES, RenderCategoryEnum.MUNDUS_STONES
   ]
 

@@ -3,12 +3,6 @@
  * @typedef {import('../enums/enums.js').ScopeEnum} ScopeEnum
  */
 
-const ScopeEnum = Object.freeze({
-  SELF: "SELF",
-  GROUP: "GROUP",
-  LIMITED: "LIMITED",
-});
-
 class ModifierRating { // Gemini: DO NOT MOVE THIS CLASS TO A NEW FILE
   /**
    * Creates an instance of ModifierRating.
@@ -40,51 +34,55 @@ class ModifierRating { // Gemini: DO NOT MOVE THIS CLASS TO A NEW FILE
 
 const modifiersData = {
   // Penetration Debuffs
-  [ModifierEnum.MajorBreach]: { "name": "Major Breach", "pen": 5948 },
-  [ModifierEnum.MinorBreach]: { "name": "Minor Breach", "pen": 2974 },
+  [ModifierEnum.MAJOR_BREACH]: { "name": "Major Breach", "pen": 5948 },
+  [ModifierEnum.MINOR_BREACH]: { "name": "Minor Breach", "pen": 2974 },
+  [ModifierEnum.RUNIC_SUNDER]: { "name": "Runic Sunder", "pen": 2200, class: ClassEnum.ARCANIST, skillLine: SkillLineEnum.HERALD_OF_THE_TOME, tooltip: "Reduces enemy armor by 2200." },
+  [ModifierEnum.CRYSTAL_WEAPON]: { "name": "Crystal Weapon", "pen": 1000, class: ClassEnum.SORCERER, skillLine: SkillLineEnum.DARK_MAGIC, tooltip: "Reduces enemy armor by 1000." },
 
   // Critical Damage Buffs
-  [ModifierEnum.MajorForce]: { "name": "Major Force", "critDamage": 20 },
-  [ModifierEnum.MinorForce]: { "name": "Minor Force", "critDamage": 10 },
-  [ModifierEnum.MajorBrittle]: { "name": "Major Brittle", "critDamage": 20 },
-  [ModifierEnum.MinorBrittle]: { "name": "Minor Brittle", "critDamage": 10 },
+  [ModifierEnum.MAJOR_FORCE]: { "name": "Major Force", "critDamage": 20 },
+  [ModifierEnum.MINOR_FORCE]: { "name": "Minor Force", "critDamage": 10 },
+  [ModifierEnum.MAJOR_BRITTLE]: { "name": "Major Brittle", "critDamage": 20 },
+  [ModifierEnum.MINOR_BRITTLE]: { "name": "Minor Brittle", "critDamage": 10 },
 
   // Target Damage Taken Debuffs
-  [ModifierEnum.MajorVulnerability]: { "name": "Major Vulnerability", "targetDamageTakenPercent": 10 },
-  [ModifierEnum.MinorVulnerability]: { "name": "Minor Vulnerability", "targetDamageTakenPercent": 5 },
+  [ModifierEnum.MAJOR_VULNERABILITY]: { "name": "Major Vulnerability", "targetDamageTakenPercent": 10 },
+  [ModifierEnum.MINOR_VULNERABILITY]: { "name": "Minor Vulnerability", "targetDamageTakenPercent": 5 },
 
   // Damage Done Buffs
-  [ModifierEnum.MajorBerserk]: { "name": "Major Berserk", "damageDonePercent": 10 },
-  [ModifierEnum.MinorBerserk]: { "name": "Minor Berserk", "damageDonePercent": 5 },
-  [ModifierEnum.MajorSlayer]: { "name": "Major Slayer", "dungeonDamageDonePercent": 10 },
-  [ModifierEnum.MinorSlayer]: { "name": "Minor Slayer", "dungeonDamageDonePercent": 5 },
-  [ModifierEnum.Empower]: { "name": "Empower", "heavyAttackDamagePercent": 80 },
+  [ModifierEnum.MAJOR_BERSERK]: { "name": "Major Berserk", "damageDonePercent": 10 },
+  [ModifierEnum.MINOR_BERSERK]: { "name": "Minor Berserk", "damageDonePercent": 5 },
+  [ModifierEnum.MAJOR_SLAYER]: { "name": "Major Slayer", "dungeonDamageDonePercent": 10 },
+  [ModifierEnum.MINOR_SLAYER]: { "name": "Minor Slayer", "dungeonDamageDonePercent": 5 },
+  [ModifierEnum.EMPOWER]: { "name": "Empower", "heavyAttackDamagePercent": 80 },
 
   // Weapon/Spell Damage Buffs
-  [ModifierEnum.MajorCourage]: { "name": "Major Courage", "weaponAndSpellDamage": 430 },
-  [ModifierEnum.MinorCourage]: { "name": "Minor Courage", "weaponAndSpellDamage": 215 },
-  [ModifierEnum.PearlescentWard]: { "name": "Pearlescent Ward", "weaponAndSpellDamage": 180 },
-  [ModifierEnum.PowerfulAssault]: { "name": "Powerful Assault", "weaponAndSpellDamage": 307 },
-  [ModifierEnum.MajorBrutality]: { "name": "Major Brutality", "weaponDamagePercent": 20 },
-  [ModifierEnum.MinorBrutality]: { "name": "Minor Brutality", "weaponDamagePercent": 10 },
-  [ModifierEnum.MajorSorcery]: { "name": "Major Sorcery", "spellDamagePercent": 20 },
-  [ModifierEnum.MinorSorcery]: { "name": "Minor Sorcery", "spellDamagePercent": 10 },
-  [ModifierEnum.WarHorn]: { "name": "War Horn (Aggressive Horn)", "maxMagickaPercent": 10, "maxStaminaPercent": 10, "notes": "Also grants Major Force." },
+  [ModifierEnum.MAJOR_COURAGE]: { "name": "Major Courage", "weaponAndSpellDamage": 430 },
+  [ModifierEnum.MINOR_COURAGE]: { "name": "Minor Courage", "weaponAndSpellDamage": 215 },
+  [ModifierEnum.PEARLESCENT_WARD]: { "name": "Pearlescent Ward", "weaponAndSpellDamage": 180 },
+  [ModifierEnum.POWERFUL_ASSAULT]: { "name": "Powerful Assault", "weaponAndSpellDamage": 307 },
+  [ModifierEnum.MAJOR_BRUTALITY]: { "name": "Major Brutality", "weaponDamagePercent": 20 },
+  [ModifierEnum.MINOR_BRUTALITY]: { "name": "Minor Brutality", "weaponDamagePercent": 10 },
+  [ModifierEnum.MAJOR_SORCERY]: { "name": "Major Sorcery", "spellDamagePercent": 20 },
+  [ModifierEnum.MINOR_SORCERY]: { "name": "Minor Sorcery", "spellDamagePercent": 10 },
+  [ModifierEnum.WAR_HORN]: { "name": "War Horn (Aggressive Horn)", "maxMagickaPercent": 10, "maxStaminaPercent": 10, "notes": "Also grants Major Force." },
 
   // Critical Chance Buffs
-  [ModifierEnum.MajorSavagery]: { "name": "Major Savagery", "weaponCritRating": 2629 },
-  [ModifierEnum.MinorSavagery]: { "name": "Minor Savagery", "weaponCritRating": 1314 },
-  [ModifierEnum.MajorProphecy]: { "name": "Major Prophecy", "spellCritRating": 2629 },
-  [ModifierEnum.MinorProphecy]: { "name": "Minor Prophecy", "spellCritRating": 1314 },
+  [ModifierEnum.MAJOR_SAVAGERY]: { "name": "Major Savagery", "weaponCritRating": 2629 },
+  [ModifierEnum.MINOR_SAVAGERY]: { "name": "Minor Savagery", "weaponCritRating": 1314 },
+  [ModifierEnum.MAJOR_PROPHECY]: { "name": "Major Prophecy", "spellCritRating": 2629 },
+  [ModifierEnum.MINOR_PROPHECY]: { "name": "Minor Prophecy", "spellCritRating": 1314 },
 
   // Ulti-gen Buffs
-  [ModifierEnum.MajorHeroism]: { "name": "Major Heroism", "notes": "Grants 3 Ultimate every 1.5 seconds." },
-  [ModifierEnum.MinorHeroism]: { "name": "Minor Heroism", "notes": "Grants 1 Ultimate every 1.5 seconds." },
+  [ModifierEnum.MAJOR_HEROISM]: { "name": "Major Heroism", "notes": "Grants 3 Ultimate every 1.5 seconds." },
+  [ModifierEnum.MINOR_HEROISM]: { "name": "Minor Heroism", "notes": "Grants 1 Ultimate every 1.5 seconds." },
 
   // Defensive & Set-specific Buffs
-  [ModifierEnum.MajorProtection]: { "name": "Major Protection", "damageReductionPercent": 10 },
-  [ModifierEnum.MinorProtection]: { "name": "Minor Protection", "damageReductionPercent": 5 },
-  [ModifierEnum.MajorAegis]: { "name": "Major Aegis", "dungeonDamageReductionPercent": 10 },
-  [ModifierEnum.MinorAegis]: { "name": "Minor Aegis", "dungeonDamageReductionPercent": 5 },
-  [ModifierEnum.LordWarden]: { "name": "Lord Warden", "resistance": 3180 },
+  [ModifierEnum.MAJOR_PROTECTION]: { "name": "Major Protection", "damageReductionPercent": 10 },
+  [ModifierEnum.MINOR_PROTECTION]: { "name": "Minor Protection", "damageReductionPercent": 5 },
+  [ModifierEnum.MAJOR_AEGIS]: { "name": "Major Aegis", "dungeonDamageReductionPercent": 10 },
+  [ModifierEnum.MINOR_AEGIS]: { "name": "Minor Aegis", "dungeonDamageReductionPercent": 5 },
+  [ModifierEnum.LORD_WARDEN]: { "name": "Lord Warden", "resistance": 3180 },
+  [ModifierEnum.SYMPHONY_OF_BLADES]: { "name": "Symphony of Blades" },
+  [ModifierEnum.OZEZANS_PLATING]: { "name": "Ozezans Plating" },
 };
