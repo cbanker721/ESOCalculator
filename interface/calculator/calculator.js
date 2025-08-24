@@ -8,9 +8,10 @@ function initUI() {
   if (patchVersionEl) {
     patchVersionEl.textContent = `(Patch ${PATCH_VERSION})`;
   }
-
+  initOverrides();
   populatePresets();
   populateConfigDropdowns();
+  initializeExportButton();
   populateTables();
 
   // Add global event listeners
@@ -50,6 +51,10 @@ function initUI() {
     calculate();
     updateConfigPanelStyle();
   }
+}
+
+function initOverrides() {
+  CalculatorOverrideManager.applyInputOverrides();
 }
 
 function populatePresets() {
@@ -344,7 +349,7 @@ function createRow(tbody, item, statType, category, key, limit, categoryInfo) {
       option.textContent = optValue;
       inputElement.appendChild(option);
     });
-    inputElement.value = computeDefaultState(key) || 0;
+    inputElement.value = CalculatorOverrideManager.computeDefaultStateWithOverride(key) || 0;
 
     const totalValueSpan = document.createElement('span');
     valueCell.appendChild(totalValueSpan);
@@ -363,7 +368,7 @@ function createRow(tbody, item, statType, category, key, limit, categoryInfo) {
     valueCell.textContent = item[statType];
     inputElement = document.createElement('input');
     inputElement.type = 'checkbox';
-    inputElement.checked = computeDefaultState(key) === true;
+    inputElement.checked = CalculatorOverrideManager.computeDefaultStateWithOverride(key) === true;
     if (limit < Infinity) {
       inputElement.addEventListener('change', () => enforceLimit(category, limit));
     }
@@ -443,8 +448,58 @@ function calculate() {
   critEl.style.color = critTotal >= critTarget ? 'lightgreen' : '#ffcc00';
 }
 
-function computeDefaultState(key) {
-  return overrideState[key]?.default || calculatorUiConfig[key]?.default;  
+/**
+ * Gathers the current state of all calculator options from the DOM.
+ * It iterates through all relevant input elements (checkboxes, dropdowns)
+ * and builds an object mapping their Enum key (from the element's data-key) to their current value.
+ *
+ * @returns {object} The current state of the calculator.
+ */
+function getCurrentCalculatorState() {
+    const currentState = {};
+    // This selector targets all relevant inputs within the main option containers.
+    const inputs = document.querySelectorAll('#penetration-tbody [data-key], #crit-damage-tbody [data-key]');
+
+    inputs.forEach(input => {
+        const key = input.dataset.key;
+        if (!key) return;
+
+        let value;
+        if (input.type === 'checkbox') {
+            value = input.checked;
+        } else if (input.tagName.toLowerCase() === 'select') {
+            value = parseInt(input.value, 10);
+        } else {
+            value = input.value;
+        }
+
+        // Avoid adding the same key twice if it appears in both tables
+        if (currentState[key] === undefined) {
+            currentState[key] = value;
+        }
+    });
+
+    return currentState;
+}
+
+/**
+ * Initializes the event listener for the "Export Overrides" button.
+ * Assumes an element with id="export-button" exists in the HTML.
+ */
+function initializeExportButton() {
+    const exportButton = document.getElementById('export-button');
+    if (!exportButton) return;
+
+    exportButton.addEventListener('click', () => {
+        const currentState = getCurrentCalculatorState();
+        const overrides = CalculatorOverrideManager.computeExportOverride(currentState);
+        const serializedOverrides = btoa(JSON.stringify(overrides));
+        const url = new URL(window.location.href);
+        url.searchParams.set('modifiers', serializedOverrides);
+        navigator.clipboard.writeText(url.toString())
+            .then(() => alert('Export URL copied to clipboard!'))
+            .catch(err => console.error('Failed to copy URL:', err));
+    });
 }
 
 function updateClassSkillsBasedOnSelection() {
@@ -461,7 +516,7 @@ function updateClassSkillsBasedOnSelection() {
   classSkillInputs.forEach(input => {
     const key = input.dataset.key;
     const skillData = skillsData[key];
-    const defaultState = computeDefaultState(key);
+    const defaultState = CalculatorOverrideManager.computeDefaultStateWithOverride(key);
     if (!skillData || !skillData.skillLine) return;
 
     const isSelected = selectedSkillLines.has(skillData.skillLine);

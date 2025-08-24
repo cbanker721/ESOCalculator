@@ -3,11 +3,26 @@
 <head>
   <title>ESO Pen & Crit Damage Calculator</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .header-container {
+      display: flex;
+      align-items: center;
+    }
+
+    #export-button {
+      padding: 0.5em 1em;
+      font-size: 0.9em;
+      cursor: pointer;
+      align-items: right;
+    }
+  </style>
 </head>
 <body>
-  <h1>ESO Penetration & Crit Calculator <span id="patch-version"></span></h1>
-  
-  <div class="main-content-wrapper">
+  <div class="header-container">
+    <h1>ESO Penetration & Crit Calculator <span id="patch-version"></span></h1>
+  </div>
+
+    <div class="main-content-wrapper">
     <div class="left-panel">
       <div class="presets-section">
         <h2>Presets</h2>
@@ -60,6 +75,7 @@
           Offline Builds <a href="https://github.com/cbanker721/ESOCalculator/archive/refs/heads/mainline.zip" target="_blank">(Latest)</a>
           <a href="https://github.com/cbanker721/ESOCalculator/releases">(Stable)</a>
         </div>
+        <button id="export-button" title="Copy a shareable link with your current selections to the clipboard.">Export Overrides</button>
       </div>
     </div>
 
@@ -115,6 +131,8 @@
   <script src="data/cp.js"></script>
   <script src="data/data.js"></script>
   <script src="model/preset.js"></script>
+  <script src="util/serialization.js"></script>
+  <script src="interface/calculator/override.js"></script>
   <script src="interface/calculator/data.js"></script>
   <script src="interface/calculator/calculator.js"></script>
 </body>
