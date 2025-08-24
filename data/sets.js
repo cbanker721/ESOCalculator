@@ -13,9 +13,9 @@ const setsData = {
   [SetEnum.WhorlOfTheDepths]: { "name": "Perfected Whorl of the Depths", "pen": 0, "critDamage": 0, "pieces": 5 },
   [SetEnum.TideKingGaze]: { "name": "Tide-King's Gaze", "pen": 1487, "pieces": 5, "hide": true },
   [SetEnum.AnsuulsTorment]: { "name": "Ansuul's Torment", "pen": 1487, "critDamage": 0, "pieces": 5, "hide": true },
-  [SetEnum.PartialCritSet]: { "name": "Partial Crit Set", "pieces": 1, "partial": true, "hide": true , tooltip: "Partial set that gives crit chance (e.g. 1-piece Slimecraw)" },
-  [SetEnum.PartialPenSet]: { "name": "Partial Pen Set", "pieces": 1, "partial": true, "hide": true , tooltip: "Partial set that gives pen (e.g. 1-piece Arch Druid)" },
-  [SetEnum.PartialMiscSet]: { "name": "Partial Misc Set", "pieces": 1, "partial": true, "hide": true , tooltip: "Partial set that gives some bonus (e.g. 1-piece Trainee)" },
+  [SetEnum.PersonalCritSet]: { "name": "Personal Crit Set", "pieces": 1, "partial": true, "hide": true , tooltip: "Partial set that gives crit chance (e.g. 1-piece Slimecraw)" },
+  [SetEnum.PersonalPenSet]: { "name": "Personal Pen Set", "pieces": 1, "pen": 1487, "range": [0,1,2], "partial": true, tooltip: "Partial set that gives pen (e.g. 1-piece Arch Druid, Ansuul's, Tideborn)" },
+  [SetEnum.PersonalMiscSet]: { "name": "Personal Misc Set", "pieces": 1, "partial": true, "hide": true , tooltip: "Partial set that gives some bonus (e.g. 1-piece Trainee)" },
 };
 
 const mythicsData = {

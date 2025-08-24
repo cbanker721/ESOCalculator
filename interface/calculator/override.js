@@ -28,7 +28,9 @@ class CalculatorOverrideManager {
                 console.error("Failed to parse override data from URL:", e);
                 this.overrideCalculatorState = {};
             }
+            
         }
+        console.log("Input overrides:", this.overrideCalculatorState);
     }
 
     static computeDefaultStateWithOverride(key) {

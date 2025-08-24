@@ -46,8 +46,8 @@ const SetEnum = Object.freeze({
   TurningTide: "TurningTide",
   Yolnahkriin: "Yolnahkriin",
 
-  // Partial sets worn (e.g. 1-piece slimecraw, 4-piece Tideborn)
-  PartialCritSet: "1PieceCritSet",
-  PartialPenSet: "1PiecePenSet",
-  PartialMiscSet: "PartialSet",
+  // Not real sets, but indicators of sets with personal effects. Personal sets worn (e.g. 1-piece slimecraw, 4-piece Tideborn)
+  PersonalCritSet: "PersonalCritSet",
+  PersonalPenSet: "PersonalPenSet",
+  PersonalMiscSet: "PersonalMiscSet",
 });
