@@ -179,7 +179,7 @@ function handleConfigChange(category, selectedKey) {
   if (category === 'racial') {
     // This category is a proxy for 'racialPassives'. The dropdown controls which passives are active.
     // Uncheck all racial passives first.
-    document.querySelectorAll(`input[data-category='racialPassives']`).forEach(input => {
+    document.querySelectorAll(`input[data-category='${RenderCategoryEnum.RACIAL_PASSIVES}']`).forEach(input => {
       if (input.checked) {
         input.checked = false;
       }
@@ -188,7 +188,7 @@ function handleConfigChange(category, selectedKey) {
     // Check the passive(s) for the selected race.
     if (selectedKey && data.races[selectedKey] && data.races[selectedKey].passives) {
       data.races[selectedKey].passives.forEach(passiveKey => {
-        const targetInput = document.querySelector(`input[data-key='${passiveKey}'][data-category='racialPassives']`);
+        const targetInput = document.querySelector(`input[data-key='${passiveKey}'][data-category='${RenderCategoryEnum.RACIAL_PASSIVES}']`);
         if (targetInput) {
           targetInput.checked = true;
         }
@@ -226,27 +226,6 @@ function populateTables() {
   // Clear existing rows before populating
   penTbody.innerHTML = '';
   critTbody.innerHTML = '';
-
-
-  const classSkills = Object.fromEntries(Object.entries(skillsData).filter(([_, value]) => value.categorization === SkillTypeEnum.CLASS_SKILL));
-  const classPassives = Object.fromEntries(Object.entries(skillsData).filter(([_, value]) => value.categorization === SkillTypeEnum.CLASS_PASSIVE));
-  const weaponPassives = Object.fromEntries(Object.entries(skillsData).filter(([_, value]) => value.categorization === SkillTypeEnum.WEAPON_PASSIVE));
-  const armorPassives = Object.fromEntries(Object.entries(skillsData).filter(([_, value]) => value.categorization === SkillTypeEnum.ARMOUR_PASSIVE));
-
-  const categoryRenderConfig = {
-    [RenderCategoryEnum.UNIVERSAL]: { limit: Infinity, name: "Universal", dataStore: rosterDefaultExpectations },
-    [RenderCategoryEnum.RACIAL_PASSIVES]: { limit: Infinity, name: "Racial", dataStore: racialPassivesData },
-    [RenderCategoryEnum.PERSONAL_SETS]: { limit: 2, name: "Item Sets", dataStore: setsData },
-    [RenderCategoryEnum.MYTHICS]: { limit: 1, name: "Mythics", dataStore: mythicsData },
-    [RenderCategoryEnum.MUNDUS_STONES]: { limit: 1, name: "Mundus Stones", dataStore: mundusData },
-    [RenderCategoryEnum.SUPPORT_SETS]: { limit: Infinity, name: "Support Sets", dataStore: supportSetsData },
-    [RenderCategoryEnum.MODIFIERS]: { limit: Infinity, name: "Modifiers", dataStore: modifiersData },
-    [RenderCategoryEnum.CHAMPION_POINTS]: { limit: Infinity, name: "Champion Points", dataStore: cpData },
-    [RenderCategoryEnum.CLASS_SKILLS]: { limit: Infinity, name: "Class Skills", dataStore: classSkills },
-    [RenderCategoryEnum.CLASS_PASSIVES]: { limit: Infinity, name: "Class Passives", dataStore: classPassives },
-    [RenderCategoryEnum.WEAPON_PASSIVES]: { limit: Infinity, name: "Weapon Passives", dataStore: weaponPassives },
-    [RenderCategoryEnum.ARMOUR_PASSIVES]: { limit: Infinity, name: "Armour Passives", dataStore: armorPassives }
-  }
 
   const categoryRenderOrder = [
     RenderCategoryEnum.UNIVERSAL, RenderCategoryEnum.MODIFIERS, RenderCategoryEnum.SUPPORT_SETS, RenderCategoryEnum.ARMOUR_PASSIVES, RenderCategoryEnum.MYTHICS,
@@ -395,7 +374,7 @@ function createRow(tbody, item, statType, category, key, limit, categoryInfo) {
   inputCell.appendChild(inputElement);
 
   // Color code class skills and passives, targeting the correct element in the value cell
-  if ((category === 'classSkills' || category === 'classPassives') && item.class) {
+  if (item.class) {
     const classData = data.classes[item.class];
     if (classData && classData.color) {
       nameCell.style.color = classData.color;
@@ -464,6 +443,10 @@ function getCurrentCalculatorState() {
         const key = input.dataset.key;
         if (!key) return;
 
+        if (categoryRenderConfig[input.dataset.category].export === false) {
+          return; // Skip non-exportable categories
+        }
+
         let value;
         if (input.type === 'checkbox') {
             value = input.checked;
@@ -511,7 +494,7 @@ function updateClassSkillsBasedOnSelection() {
     }
   });
 
-  const classSkillInputs = document.querySelectorAll("input[data-category='classSkills'], input[data-category='classPassives'], select[data-category='classSkills'], select[data-category='classPassives']");
+  const classSkillInputs = document.querySelectorAll(`input[data-category='${RenderCategoryEnum.CLASS_SKILLS}'], input[data-category='${RenderCategoryEnum.CLASS_PASSIVES}'], select[data-category='${RenderCategoryEnum.CLASS_SKILLS}'], select[data-category='${RenderCategoryEnum.CLASS_PASSIVES}']`);
 
   classSkillInputs.forEach(input => {
     const key = input.dataset.key;

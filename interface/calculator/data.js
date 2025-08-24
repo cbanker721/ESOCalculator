@@ -8,25 +8,47 @@ const SpecialModifierEnum = Object.freeze({
   ARENA_WEAPON_1_PIECE: "ARENA_1_PIECE",
 });
 
-const RenderCategoryEnum = Object.freeze({
-  UNIVERSAL: "universal",
-  MODIFIERS: "modifiersData",
-  ARMOUR_PASSIVES: "armorPassives",
-  MYTHICS: "mythicsData",
-  CLASS_PASSIVES: "classPassives",
-  RACIAL_PASSIVES: "racialPassivesData",
-  PERSONAL_SETS: "setsData",
-  SUPPORT_SETS: "supportSetsData",
-  CHAMPION_POINTS: "cpData",
-  CLASS_SKILLS: "classSkills",
-  WEAPON_PASSIVES: "weaponPassives",
-  MUNDUS_STONES: "mundusData",
-});
+const classSkills = Object.fromEntries(Object.entries(skillsData).filter(([_, value]) => value.categorization === SkillTypeEnum.CLASS_SKILL));
+const classPassives = Object.fromEntries(Object.entries(skillsData).filter(([_, value]) => value.categorization === SkillTypeEnum.CLASS_PASSIVE));
+const weaponPassives = Object.fromEntries(Object.entries(skillsData).filter(([_, value]) => value.categorization === SkillTypeEnum.WEAPON_PASSIVE));
+const armorPassives = Object.fromEntries(Object.entries(skillsData).filter(([_, value]) => value.categorization === SkillTypeEnum.ARMOUR_PASSIVE));
 
 const rosterDefaultExpectations = {
   [EnchantEnum.INFUSED_CRUSHER]: enchantData[EnchantEnum.INFUSED_CRUSHER],
   [CpEnum.PIERCING]: passiveCPData[CpEnum.PIERCING]
 }
+
+
+const RenderCategoryEnum = Object.freeze({
+  UNIVERSAL: "RENDER_CATEGORY_UNIVERSAL",
+  MODIFIERS: "RENDER_CATEGORY_MODIFIERS",
+  ARMOUR_PASSIVES: "RENDER_CATEGORY_ARMOUR_PASSIVES",
+  MYTHICS: "RENDER_CATEGORY_MYTHICS",
+  CLASS_PASSIVES: "RENDER_CATEGORY_CLASS_PASSIVES",
+  RACIAL_PASSIVES: "RENDER_CATEGORY_RACIAL_PASSIVES",
+  PERSONAL_SETS: "RENDER_CATEGORY_PERSONAL_SETS",
+  SUPPORT_SETS: "RENDER_CATEGORY_SUPPORT_SETS",
+  CHAMPION_POINTS: "RENDER_CATEGORY_CHAMPION_POINTS",
+  CLASS_SKILLS: "RENDER_CATEGORY_CLASS_SKILLS",
+  WEAPON_PASSIVES: "RENDER_CATEGORY_WEAPON_PASSIVES",
+  MUNDUS_STONES: "RENDER_CATEGORY_MUNDUS_STONES",
+});
+
+const categoryRenderConfig = {
+  [RenderCategoryEnum.UNIVERSAL]: { limit: Infinity, name: "Universal", dataStore: rosterDefaultExpectations },
+  [RenderCategoryEnum.RACIAL_PASSIVES]: { limit: Infinity, name: "Racial", dataStore: racialPassivesData, export: false },
+  [RenderCategoryEnum.PERSONAL_SETS]: { limit: 2, name: "Item Sets", dataStore: setsData },
+  [RenderCategoryEnum.MYTHICS]: { limit: 1, name: "Mythics", dataStore: mythicsData, export: false },
+  [RenderCategoryEnum.MUNDUS_STONES]: { limit: 1, name: "Mundus Stones", dataStore: mundusData, export: false },
+  [RenderCategoryEnum.SUPPORT_SETS]: { limit: Infinity, name: "Support Sets", dataStore: supportSetsData },
+  [RenderCategoryEnum.MODIFIERS]: { limit: Infinity, name: "Modifiers", dataStore: modifiersData },
+  [RenderCategoryEnum.CHAMPION_POINTS]: { limit: Infinity, name: "Champion Points", dataStore: cpData },
+  [RenderCategoryEnum.CLASS_SKILLS]: { limit: Infinity, name: "Class Skills", dataStore: classSkills, export: false },
+  [RenderCategoryEnum.CLASS_PASSIVES]: { limit: Infinity, name: "Class Passives", dataStore: classPassives, export: false },
+  [RenderCategoryEnum.WEAPON_PASSIVES]: { limit: Infinity, name: "Weapon Passives", dataStore: weaponPassives },
+  [RenderCategoryEnum.ARMOUR_PASSIVES]: { limit: Infinity, name: "Armour Passives", dataStore: armorPassives }
+}
+
 
 
 const calculatorUiConfig = {
