@@ -8,7 +8,7 @@ class Preset {
    * @param {RaceEnum} race - The key for the selected race (e.g., RaceEnum.DARK_ELF).
    * @param {MundusEnum} mundus - The key for the selected Mundus stone (e.g., MundusEnum.THE_THIEF).
    * @param {MythicEnum} mythic - The key for the selected Mythic item (e.g., MythicEnum.VELOTHI_UR_MAGE).
-   * @param {SkillLineEnum} mainSkillLine - The key for the main skill line.
+   * @param {SkillLineEnum} skillLine1 - The key for the first skill line. This detemrines the class
    * @param {SkillLineEnum} skillLine2 - The key for the second skill line.
    * @param {SkillLineEnum} skillLine3 - The key for the third skill line.
    */

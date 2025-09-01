@@ -3,22 +3,23 @@ class RosterFactory {
     createDefaultRoster() {
         const playerList = {
             "MainTank1": new Player(
-                "MT", "Main Tank", roleTemplates.MainTank1, null
+                {name: "MT Name", description: "Main Tank", roleTemplate: roleTemplates[DefaultRoleTemplateId.MAIN_TANK_1], playerBuild: null}
             ),
             "OffTank1": new Player(
-                "OT", "Off Tank", roleTemplates.OffTank1, null
+                {name: "OT Name", description: "Off Tank", roleTemplate: roleTemplates[DefaultRoleTemplateId.OFF_TANK_1], playerBuild: null}
             ),
             "SPCHealer1": new Player(
-                "H1", "SPC Healer", roleTemplates.SPCHealer1, null
+                {name: "H1 Name", description: "SPC Healer", roleTemplate: roleTemplates[DefaultRoleTemplateId.SPEC_HEALER_1], playerBuild: null}
             ),
             "ROJOHealer1": new Player(
-                "H2", "ROJO Healer", roleTemplates.ROJOHealer1, null
+                {name: "H2 Name", description: "ROJO Healer", roleTemplate: roleTemplates[DefaultRoleTemplateId.ROJO_HEALER_1], playerBuild: null}
             ),
         }
         for (let i = 1; i <= 8; i++) {
             playerList[`ParseDPS${i}`] = new Player(
-                `ParseDPS${i}`, "", roleTemplates.ParseDPS1, null
+                {name: `ParseDPS${i} Name`, description: "", roleTemplate: roleTemplates[DefaultRoleTemplateId.PARSE_DPS_1], playerBuild: null}
             );
         }
+        return playerList;
     }
 }

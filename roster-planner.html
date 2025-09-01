@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ESO Raid Planner</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <!-- Left: encounter list -->
+  <div class="encounter-list">
+    <h2>Encounters</h2>
+    <div class="encounter">Boss 1</div>
+    <div class="encounter">Boss 2</div>
+    <div class="encounter">Boss 3</div>
+    <div class="encounter">Final Boss</div>
+  </div>
+
+  <!-- Middle: roster grid -->
+  <div class="roster" id="roster-grid">
+  </div>
+
+  <!-- Right: player detail panel -->
+  <div class="detail-panel">
+    <h2>Player Details</h2>
+    <label>Name: <input type="text"></label><br><br>
+    <label>Role:
+      <select>
+        <option>DPS</option>
+        <option>Tank</option>
+        <option>Healer</option>
+      </select>
+    </label><br><br>
+    <label>Race:
+      <select>
+        <option>Khajiit</option>
+        <option>Dark Elf</option>
+        <option>High Elf</option>
+      </select>
+    </label><br><br>
+    <label>Set 1: <input type="text"></label><br>
+    <label>Set 2: <input type="text"></label><br>
+    <label>Mythic: <input type="text"></label><br><br>
+    <button>Save</button>
+  </div>
+
+  <!-- Bottom: summary bar -->
+  <div class="summary">
+    <div>Penetration: Avg 6500</div>
+    <div>Crit Damage: 122%</div>
+    <div>⚠ Missing Major Breach</div>
+  </div>
+
+  <link rel="stylesheet" href="style/roster-planner.css">
+  <script src="enums/enums.js"></script>
+  <script src="enums/skills.js"></script>
+  <script src="enums/sets.js"></script>
+  <script src="model/role.js"></script>
+  <script src="model/player.js"></script>
+  <script src="data/sets.js"></script>
+  <script src="templates/roles.js"></script>
+  <script src="factory/roster-factory.js"></script>
+  <script src="manager/build-manager.js"></script>
+  <script src="interface/roster.js"></script>
+  
+  <script src="interface/roster/roster-renderer.js"></script>
+  <script src="interface/roster/roster-manager.js"></script>
+  <script>
+     const rosterManager = new RosterManager();
+     rosterManager.initialize();
+  </script>
+</body>
+</body>
+</html>

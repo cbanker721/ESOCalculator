@@ -29,7 +29,7 @@ class Player {
 
     /**
      * The assigned role template for this player.
-     * @type {object | null}
+     * @type {object}
      */
     this.roleTemplate = roleTemplate;
 
@@ -38,5 +38,9 @@ class Player {
      * @type {object | null}
      */
     this.playerBuild = playerBuild;
+  }
+
+  toString() {
+    return `Player: ${this.name}, Role: ${this.roleTemplate.name}, Build: ${this.playerBuild ? this.playerBuild.name : 'None'}`;
   }
 }

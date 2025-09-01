@@ -12,6 +12,9 @@ const classSkills = Object.fromEntries(Object.entries(skillsData).filter(([_, va
 const classPassives = Object.fromEntries(Object.entries(skillsData).filter(([_, value]) => value.categorization === SkillTypeEnum.CLASS_PASSIVE));
 const weaponPassives = Object.fromEntries(Object.entries(skillsData).filter(([_, value]) => value.categorization === SkillTypeEnum.WEAPON_PASSIVE));
 const armorPassives = Object.fromEntries(Object.entries(skillsData).filter(([_, value]) => value.categorization === SkillTypeEnum.ARMOUR_PASSIVE));
+const supportSetsData = Object.fromEntries(Object.entries(setsData).filter(([_, value]) => value.setType === SetTypeEnum.SUPPORT_SET));
+const mythicsData = Object.fromEntries(Object.entries(setsData).filter(([_, value]) => value.setType === SetTypeEnum.MYTHIC_SET));
+const personalSetsData = Object.fromEntries(Object.entries(setsData).filter(([_, value]) => value.setType === SetTypeEnum.PERSONAL_SET));
 
 const rosterDefaultExpectations = {
   [EnchantEnum.INFUSED_CRUSHER]: enchantData[EnchantEnum.INFUSED_CRUSHER],
@@ -37,7 +40,7 @@ const RenderCategoryEnum = Object.freeze({
 const categoryRenderConfig = {
   [RenderCategoryEnum.UNIVERSAL]: { limit: Infinity, name: "Universal", dataStore: rosterDefaultExpectations },
   [RenderCategoryEnum.RACIAL_PASSIVES]: { limit: Infinity, name: "Racial", dataStore: racialPassivesData, export: false },
-  [RenderCategoryEnum.PERSONAL_SETS]: { limit: 2, name: "Item Sets", dataStore: setsData },
+  [RenderCategoryEnum.PERSONAL_SETS]: { limit: 2, name: "Item Sets", dataStore: personalSetsData },
   [RenderCategoryEnum.MYTHICS]: { limit: 1, name: "Mythics", dataStore: mythicsData, export: false },
   [RenderCategoryEnum.MUNDUS_STONES]: { limit: 1, name: "Mundus Stones", dataStore: mundusData, export: false },
   [RenderCategoryEnum.SUPPORT_SETS]: { limit: Infinity, name: "Support Sets", dataStore: supportSetsData },

@@ -1,0 +1,159 @@
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+}
+
+/* Left sidebar (encounters) */
+.encounter-list {
+    width: 200px;
+    background: #2e2e2e;
+    color: white;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.encounter-list h2 {
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.encounter {
+    padding: 8px;
+    background: #444;
+    margin: 4px 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.encounter:hover {
+    background: #666;
+}
+
+/* Main roster grid */
+.roster {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    overflow-y: auto; /* Allows scrolling if content exceeds height */
+    height: 600px; /* Fixed height */
+    padding: 10px;
+    background: #f5f5f5;
+}
+
+.player-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: block;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 16px;
+    margin: 8px;
+    background: var(--role-color, #f9fbfd); /* Use CSS variable for dynamic background */
+    transition: background 0.2s;
+}
+
+.player-card h3 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.player-card small {
+    color: #666;
+}
+
+/* Right panel (player details) */
+.detail-panel {
+    width: 300px;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* Summary bar */
+.summary {
+    position: fixed;
+    bottom: 0;
+    left: 200px;
+    right: 300px;
+    background: #222;
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.player-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.role-icon {
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+}
+
+.player-card-header small {
+    margin-bottom: 0;
+    /* Remove margin-left from JS, control spacing here */
+}
+
+.player-card-name-row {
+    margin-bottom: 8px;
+}
+
+.player-name-input {
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-left: 8px;
+    width: 120px;
+    box-sizing: border-box;
+}
+
+.player-card h3 {
+    margin: 0;
+}
+
+.player-card small {
+    display: block;
+    margin-bottom: 0px;
+    color: #666;
+}
+
+.set-badge {
+    display: inline-block;
+    background: var(--set-type-color, #f9fbfd); /* Use CSS variable for dynamic background */
+    color: #fbfbfb;
+    padding: 2px 8px;
+    margin-right: 6px;
+    font-size: 0.75em;
+    border: 1px solid #ddd;
+}
+
+.set-badge.none {
+    background: #eee;
+    color: #aaa;
+    border: 1px dashed #ccc;
+}
+
+.sets-list {
+    display: inline;
+}
+
+.sets-label,
+.mythic-label {
+    font-size: 0.85em; /* Match .player-name-input font size */
+    font-weight: bold;
+    color: #333;
+    margin-right: 4px;
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ESO Raid Planner</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Left sidebar (encounters) */
+    .encounter-list {
+      width: 200px;
+      background: #2e2e2e;
+      color: white;
+      padding: 10px;
+      overflow-y: auto;
+    }
+
+    .encounter-list h2 {
+      font-size: 16px;
+      margin-top: 0;
+    }
+
+    .encounter {
+      padding: 8px;
+      background: #444;
+      margin: 4px 0;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .encounter:hover {
+      background: #666;
+    }
+
+    /* Main roster grid */
+    .roster {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: 10px;
+      background: #f5f5f5;
+    }
+
+    .player-card {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .player-card h3 {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .player-card small {
+      color: #666;
+    }
+
+    /* Right panel (player details) */
+    .detail-panel {
+      width: 300px;
+      background: #fff;
+      border-left: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    /* Summary bar */
+    .summary {
+      position: fixed;
+      bottom: 0;
+      left: 200px;
+      right: 300px;
+      background: #222;
+      color: white;
+      padding: 8px;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <!-- Left: encounter list -->
+  <div class="encounter-list">
+    <h2>Encounters</h2>
+    <div class="encounter">Boss 1</div>
+    <div class="encounter">Boss 2</div>
+    <div class="encounter">Boss 3</div>
+    <div class="encounter">Final Boss</div>
+  </div>
+
+  <!-- Middle: roster grid -->
+  <div class="roster">
+    <!-- Example player slots -->
+    <div class="player-card">
+      <h3>Player 1</h3>
+      <small>Role: DPS</small>
+      <small>Sets: Spriggan + Shattered Fate</small>
+    </div>
+    <div class="player-card"><h3>Player 2</h3></div>
+    <div class="player-card"><h3>Player 3</h3></div>
+    <div class="player-card"><h3>Player 4</h3></div>
+    <div class="player-card"><h3>Player 5</h3></div>
+    <div class="player-card"><h3>Player 6</h3></div>
+    <div class="player-card"><h3>Player 7</h3></div>
+    <div class="player-card"><h3>Player 8</h3></div>
+    <div class="player-card"><h3>Player 9</h3></div>
+    <div class="player-card"><h3>Player 10</h3></div>
+    <div class="player-card"><h3>Player 11</h3></div>
+    <div class="player-card"><h3>Player 12</h3></div>
+  </div>
+
+  <!-- Right: player detail panel -->
+  <div class="detail-panel">
+    <h2>Player Details</h2>
+    <label>Name: <input type="text"></label><br><br>
+    <label>Role:
+      <select>
+        <option>DPS</option>
+        <option>Tank</option>
+        <option>Healer</option>
+      </select>
+    </label><br><br>
+    <label>Race:
+      <select>
+        <option>Khajiit</option>
+        <option>Dark Elf</option>
+        <option>High Elf</option>
+      </select>
+    </label><br><br>
+    <label>Set 1: <input type="text"></label><br>
+    <label>Set 2: <input type="text"></label><br>
+    <label>Mythic: <input type="text"></label><br><br>
+    <button>Save</button>
+  </div>
+
+  <!-- Bottom: summary bar -->
+  <div class="summary">
+    <div>Penetration: Avg 6500</div>
+    <div>Crit Damage: 122%</div>
+    <div>⚠ Missing Major Breach</div>
+  </div>
+</body>
+</html>

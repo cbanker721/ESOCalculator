@@ -117,10 +117,10 @@ function populateConfigDropdowns() {
 
   // Populate Skill Lines
   const mythicSelect = document.getElementById("mythicSelect");
-  Object.keys(data.mythicsData).forEach(mythicKey => {
+  Object.keys(mythicsData).forEach(mythicKey => {
     const opt = document.createElement("option");
     opt.value = mythicKey;
-    opt.textContent = data.mythicsData[mythicKey].name;
+    opt.textContent = mythicsData[mythicKey].name;
     mythicSelect.appendChild(opt);
   });
 
