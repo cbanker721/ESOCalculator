@@ -1,7 +1,7 @@
 class RosterManager {
     constructor() {
         this.roster = [];
-        this.buildManager() = new BuildManager();
+        this.buildManager = new BuildManager();
         this.renderer = new RosterRenderer(this, this.buildManager);
     }
 
