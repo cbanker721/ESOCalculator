@@ -82,10 +82,40 @@ class RosterRenderer {
         setsDiv.appendChild(setsList);
         card.appendChild(setsDiv);
 
+        const groupModifiersDiv = this.createModifierRow('Group', this.buildManager.getGroupModifierData([player]));
+        card.appendChild(groupModifiersDiv);
+
+        const personalModifiersDiv = this.createModifierRow('Personal', this.buildManager.getPersonalModifierData(player));
+        card.appendChild(personalModifiersDiv);
+
         return card;
     }
 
     getSetName(setId) {
         return setsData[setId]?.shortName || setsData[setId]?.name || setId;
+    }
+
+    createModifierRow(label, modifiers) {
+        const modifiersDiv = document.createElement('div');
+        const modifiersLabel = document.createElement('span');
+        modifiersLabel.className = 'modifiers-label';
+        modifiersLabel.textContent = `${label}: `;
+        modifiersDiv.appendChild(modifiersLabel);
+    
+        const modifiersList = document.createElement('span');
+        modifiersList.className = 'modifiers-list';
+        if (modifiers) {
+            Object.keys(modifiers).forEach(key => {
+                const badge = document.createElement('span');
+                badge.className = 'modifier-badge';
+                badge.textContent = modifiersData[key]?.name || key;
+                badge.style.setProperty('--modifier-type-color', "#666666ff");
+                modifiersList.appendChild(badge);
+            });
+        } else {
+            modifiersList.textContent = 'None';
+        }
+        modifiersDiv.appendChild(modifiersList);
+        return modifiersDiv;
     }
 }

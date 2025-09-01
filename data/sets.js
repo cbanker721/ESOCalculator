@@ -185,7 +185,7 @@ const setsData = {
     name: "Baron Zaudrus",
     setType: SetTypeEnum.MONSTER_SET,
     modifiers: [
-      { modifier: ModifierEnum.BARON_ZAUDRUS_DEBUFF, rating: 2, scope: ScopeEnum.GROUP }
+      { modifier: ModifierEnum.BARON_ZAUDRUS, rating: 2, scope: ScopeEnum.SELF }
     ],
     pieces: 2
   },
@@ -194,7 +194,7 @@ const setsData = {
     name: "Nazaray",
     setType: SetTypeEnum.MONSTER_SET,
     modifiers: [
-      { modifier: ModifierEnum.NAZARAY_EFFECT, rating: 2, scope: ScopeEnum.GROUP }
+      { modifier: ModifierEnum.NAZARAY, rating: 2, scope: ScopeEnum.GROUP }
     ],
     pieces: 2
   },

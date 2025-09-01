@@ -11,10 +11,10 @@ class ModifierSource {
 }
 
 class AggregateModifier {
-    constructor({
+    constructor(
         name,
         rating,
-        sources}) {
+        sources) {
         this.name = name;
         this.rating = rating;
         this.sources = sources;
@@ -39,10 +39,10 @@ class BuildManager {
                         }
                         const modifierSource = new ModifierSource(player.name, setId, ModifierSourceEnum.SET);
                         if (!modifierData[modifier.modifier]) {
-                            modifierData.modifier = AggregateModifier(modifier.modifier, modifier.rating, [modifierSource]);
+                            modifierData[modifier.modifier] = new AggregateModifier(modifier.modifier, modifier.rating, [modifierSource]);
                         } else {
-                            modifierData.modifier.rating += modifier.rating;
-                            modifierData.modifier.sources.append(modifierSource);
+                            modifierData[modifier.modifier].rating += modifier.rating;
+                            modifierData[modifier.modifier].sources.append(modifierSource);
                         }
                    }
                 }
@@ -58,15 +58,15 @@ class BuildManager {
             const set = setsData[setId]
             if (set.modifiers) {
                 for (const modifier of set.modifiers) {
-                    if (modifier.scope !== ScopeEnum.GROUP) {
+                    if (modifier.scope !== ScopeEnum.SELF) {
                         continue;
                     }
                     const modifierSource = new ModifierSource(player.name, setId, ModifierSourceEnum.SET);
                     if (!modifierData[modifier.modifier]) {
-                        modifierData.modifier = AggregateModifier(modifier.modifier, modifier.rating, [modifierSource]);
+                        modifierData[modifier.modifier] = new AggregateModifier(modifier.modifier, modifier.rating, [modifierSource]);
                     } else {
-                        modifierData.modifier.rating += modifier.rating;
-                        modifierData.modifier.sources.append(modifierSource);
+                        modifierData[modifier.modifier].rating += modifier.rating;
+                        modifierData[modifier.modifier].sources.append(modifierSource);
                     }
                 }
             }

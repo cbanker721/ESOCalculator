@@ -80,9 +80,11 @@ const modifiersData = {
   // Defensive & Set-specific Buffs
   [ModifierEnum.MAJOR_PROTECTION]: { "name": "Major Protection", "damageReductionPercent": 10 },
   [ModifierEnum.MINOR_PROTECTION]: { "name": "Minor Protection", "damageReductionPercent": 5 },
-  [ModifierEnum.MAJOR_AEGIS]: { "name": "Major Aegis", "dungeonDamageReductionPercent": 10 },
-  [ModifierEnum.MINOR_AEGIS]: { "name": "Minor Aegis", "dungeonDamageReductionPercent": 5 },
+  [ModifierEnum.MAJOR_AEGIS]: { "name": "Major Aegis", "damageReductionPercent": 10 },
+  [ModifierEnum.MINOR_AEGIS]: { "name": "Minor Aegis", "damageReductionPercent": 5 },
   [ModifierEnum.LORD_WARDEN]: { "name": "Lord Warden", "resistance": 3180 },
   [ModifierEnum.SYMPHONY_OF_BLADES]: { "name": "Symphony of Blades" },
   [ModifierEnum.OZEZANS_PLATING]: { "name": "Ozezans Plating" },
+  [ModifierEnum.BARON_ZAUDRUS]: { "name": "Baron Zaudrus" },
+  [ModifierEnum.NAZARAY]: { "name": "Nazaray" },
 };
