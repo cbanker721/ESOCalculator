@@ -19,6 +19,11 @@ class AggregateModifier {
         this.rating = rating;
         this.sources = sources;
     }
+
+    merge(other) {
+        this.rating += other.rating;
+        this.sources = this.sources.concat(other.sources);
+    }
 }
 
 class BuildManager {
@@ -38,12 +43,13 @@ class BuildManager {
                             continue;
                         }
                         const modifierSource = new ModifierSource(player.name, setId, ModifierSourceEnum.SET);
+                        const aggregateModifier = new AggregateModifier(modifier.modifier, modifier.rating, [modifierSource]);
                         if (!modifierData[modifier.modifier]) {
-                            modifierData[modifier.modifier] = new AggregateModifier(modifier.modifier, modifier.rating, [modifierSource]);
+                            modifierData[modifier.modifier] = aggregateModifier
                         } else {
-                            modifierData[modifier.modifier].rating += modifier.rating;
-                            modifierData[modifier.modifier].sources.append(modifierSource);
+                            modifierData[modifier.modifier].merge(aggregateModifier);
                         }
+                        console.log(JSON.stringify(modifier))
                    }
                 }
             }

@@ -147,13 +147,38 @@ body {
 }
 
 .modifier-badge {
-    display: inline-block;
-    background: var(--modifier-type-color, #f9fbfd); /* Use CSS variable for dynamic background */
-    color: #fbfbfb;
-    padding: 2px 8px;
-    margin-right: 6px;
-    font-size: 0.75em;
-    border: 1px solid #ddd;
+  display: inline-block;
+  padding: 2px 6px;
+  background-color: #444;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  margin: 1px;
+  color: white;
+  min-width: 60px;
+  text-align: center;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.modifier-badge:hover::after {
+  content: attr(data-fullname);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.modifier-badge:hover::after {
+  opacity: 1;
 }
 
 .sets-list {
@@ -161,7 +186,7 @@ body {
 }
 
 .sets-label,
-.mythic-label {
+.modifiers-label {
     font-size: 0.85em; /* Match .player-name-input font size */
     font-weight: bold;
     color: #333;

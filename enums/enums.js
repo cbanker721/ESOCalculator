@@ -1,4 +1,3 @@
-// Gemini: Do not delete enums or move them out of the file unless instructed to do so. Ask first
 const MundusEnum = Object.freeze({
   THE_APPRENTICE: "MUNDUS_THE_APPRENTICE",
   THE_ATRONACH: "MUNDUS_THE_ATRONACH",
@@ -122,7 +121,6 @@ const ModifierEnum = Object.freeze({
   OZEZANS_PLATING: 'MODIFIER_OZEZANS_PLATING',
   NAZARAY: 'MODIFIER_NAZARAY',
   BARON_ZAUDRUS: 'MODIFIER_BARON_ZAUDRUS',
-
 });
 
 const ModifierSourceEnum = Object.freeze({

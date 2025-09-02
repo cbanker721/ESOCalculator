@@ -108,7 +108,8 @@ class RosterRenderer {
             Object.keys(modifiers).forEach(key => {
                 const badge = document.createElement('span');
                 badge.className = 'modifier-badge';
-                badge.textContent = modifiersData[key]?.name || key;
+                badge.textContent = modifiersData[key]?.shortName || modifiersData[key]?.name || key;
+                badge.dataset.fullname = modifiersData[key]?.name || key;
                 badge.style.setProperty('--modifier-type-color', "#666666ff");
                 modifiersList.appendChild(badge);
             });

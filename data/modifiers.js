@@ -34,14 +34,14 @@ class ModifierRating { // Gemini: DO NOT MOVE THIS CLASS TO A NEW FILE
 
 const modifiersData = {
   // Penetration Debuffs
-  [ModifierEnum.MAJOR_BREACH]: { "name": "Major Breach", "pen": 5948 },
-  [ModifierEnum.MINOR_BREACH]: { "name": "Minor Breach", "pen": 2974 },
-  [ModifierEnum.RUNIC_SUNDER]: { "name": "Runic Sunder", "pen": 2200, class: ClassEnum.ARCANIST, skillLine: SkillLineEnum.HERALD_OF_THE_TOME, tooltip: "Reduces enemy armor by 2200." },
-  [ModifierEnum.CRYSTAL_WEAPON]: { "name": "Crystal Weapon", "pen": 1000, class: ClassEnum.SORCERER, skillLine: SkillLineEnum.DARK_MAGIC, tooltip: "Reduces enemy armor by 1000." },
+  [ModifierEnum.MAJOR_BREACH]: { "name": "Major Breach", "shortName": "Maj Breach", "pen": 5948 },
+  [ModifierEnum.MINOR_BREACH]: { "name": "Minor Breach", "shortName": "Min Breach", "pen": 2974 },
+  [ModifierEnum.RUNIC_SUNDER]: { "name": "Runic Sunder", "shortName": "Runic Sunder", "pen": 2200, class: ClassEnum.ARCANIST, skillLine: SkillLineEnum.HERALD_OF_THE_TOME, tooltip: "Reduces enemy armor by 2200." },
+  [ModifierEnum.CRYSTAL_WEAPON]: { "name": "Crystal Weapon", "shortName": "Crystal Weapon", "pen": 1000, class: ClassEnum.SORCERER, skillLine: SkillLineEnum.DARK_MAGIC, tooltip: "Reduces enemy armor by 1000." },
 
   // Critical Damage Buffs
-  [ModifierEnum.MAJOR_FORCE]: { "name": "Major Force", "critDamage": 20 },
-  [ModifierEnum.MINOR_FORCE]: { "name": "Minor Force", "critDamage": 10 },
+  [ModifierEnum.MAJOR_FORCE]: { "name": "Major Force", "shortName": "Maj Force", "critDamage": 20 },
+  [ModifierEnum.MINOR_FORCE]: { "name": "Minor Force", "shortName": "Min Force", "critDamage": 10 },
   [ModifierEnum.MAJOR_BRITTLE]: { "name": "Major Brittle", "critDamage": 20 },
   [ModifierEnum.MINOR_BRITTLE]: { "name": "Minor Brittle", "critDamage": 10 },
 
