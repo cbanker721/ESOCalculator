@@ -119,19 +119,7 @@ class RosterRenderer {
                 const modifiersList = document.createElement('span');
                 modifiersList.className = 'modifiers-list';
                 for (const modifier of modifiersToRender) {
-                    const badge = document.createElement('span');
-                    if (defaultExpectedGroupModifiers.has(modifier)) {
-                        if (modifiers[modifier] === undefined) {
-                            badge.className = 'modifier-badge unfulfilled-modifier';
-                        } else {
-                            badge.className = 'modifier-badge fulfilled-modifier';
-                        }
-                    } else {
-                        badge.className = 'modifier-badge';
-                    }
-                    badge.textContent = modifiersData[modifier]?.shortName || modifiersData[modifier]?.name || modifier;
-                    badge.dataset.fullname = modifiersData[modifier]?.name || modifier;
-                    badge.style.setProperty('--modifier-type-color', "#666666ff");
+                    const badge = this.createGroupModifierBadge(modifier, modifiers, modifiersList);
                     modifiersList.appendChild(badge);
                 }
                 const modifierTypeHeader = document.createElement('div');
@@ -145,6 +133,23 @@ class RosterRenderer {
         }
         this.modifierPanel.appendChild(panel);
 
+    }
+
+    createGroupModifierBadge(modifier, modifiers, modifiersList) {
+        const badge = document.createElement('span');
+        if (defaultExpectedGroupModifiers.has(modifier)) {
+            if (modifiers[modifier] === undefined) {
+                badge.className = 'modifier-badge unfulfilled-modifier';
+            } else {
+                badge.className = 'modifier-badge fulfilled-modifier';
+            }
+        } else {
+            badge.className = 'modifier-badge';
+        }
+        badge.textContent = modifiersData[modifier]?.shortName || modifiersData[modifier]?.name || modifier;
+        badge.dataset.fullname = modifiersData[modifier]?.name || modifier;
+        badge.style.setProperty('--modifier-type-color', "#666666ff");
+        return badge;
     }
 
     getSetName(setId) {
@@ -162,11 +167,7 @@ class RosterRenderer {
         modifiersList.className = 'modifiers-list';
         if (modifiers) {
             Object.keys(modifiers).forEach(key => {
-                const badge = document.createElement('span');
-                badge.className = 'modifier-badge';
-                badge.textContent = modifiersData[key]?.shortName || modifiersData[key]?.name || key;
-                badge.dataset.fullname = modifiersData[key]?.name || key;
-                badge.style.setProperty('--modifier-type-color', "#666666ff");
+                const badge = this.createPlayerModifierBadge(key);
                 modifiersList.appendChild(badge);
             });
         } else {
@@ -174,5 +175,14 @@ class RosterRenderer {
         }
         modifiersDiv.appendChild(modifiersList);
         return modifiersDiv;
+    }
+
+    createPlayerModifierBadge(key) {
+        const badge = document.createElement('span');
+        badge.className = 'modifier-badge';
+        badge.textContent = modifiersData[key]?.shortName || modifiersData[key]?.name || key;
+        badge.dataset.fullname = modifiersData[key]?.name || key;
+        badge.style.setProperty('--modifier-type-color', "#666666ff");
+        return badge;
     }
 }
