@@ -9,17 +9,28 @@
 </head>
 <body>
   <!-- Left: encounter list -->
-  <div class="encounter-list">
-    <h2>Encounters</h2>
-    <div class="encounter">Boss 1</div>
-    <div class="encounter">Boss 2</div>
-    <div class="encounter">Boss 3</div>
-    <div class="encounter">Final Boss</div>
+  <div class="left-panel">
+
+    <!-- Encounters -->
+    <div class="encounters-panel">
+      <h2>Encounters</h2>
+      <div class="encounter">Boss 1</div>
+      <div class="encounter">Boss 2</div>
+      <div class="encounter">Boss 3</div>
+      <div class="encounter">Final Boss</div>
+    </div>
+    
+    <!-- Modifiers -->
+    <div class="modifier-panel" id="modifier-panel">
+    </div>
   </div>
+
 
   <!-- Middle: roster grid -->
   <div class="roster" id="roster-grid">
   </div>
+
+
 
   <!-- Right: player detail panel -->
   <div class="detail-panel">
@@ -64,7 +75,7 @@
   <script src="factory/roster-factory.js"></script>
   <script src="manager/build-manager.js"></script>
   <script src="interface/roster.js"></script>
-  
+  <script src="interface/roster/data.js"></script>
   <script src="interface/roster/roster-renderer.js"></script>
   <script src="interface/roster/roster-manager.js"></script>
   <script>

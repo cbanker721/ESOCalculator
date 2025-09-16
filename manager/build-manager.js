@@ -32,7 +32,7 @@ class BuildManager {
     }
 
     getGroupModifierData(players) {
-        const modifierData = {}
+        const modifierData = {};
         for (const player of players) {
             const setIds = player.roleTemplate.sets
             for (const setId of setIds) {

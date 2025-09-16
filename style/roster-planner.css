@@ -6,7 +6,7 @@ body {
 }
 
 /* Left sidebar (encounters) */
-.encounter-list {
+.left-panel {
     width: 200px;
     background: #2e2e2e;
     color: white;
@@ -14,7 +14,7 @@ body {
     overflow-y: auto;
 }
 
-.encounter-list h2 {
+.left-panel h2 {
     font-size: 16px;
     margin-top: 0;
 }
@@ -149,11 +149,11 @@ body {
 .modifier-badge {
   display: inline-block;
   padding: 2px 6px;
-  background-color: #444;
+  background: #00ffb3;
   border-radius: 10px;
   font-size: 0.8rem;
   margin: 1px;
-  color: white;
+  color: rgb(0, 0, 0);
   min-width: 60px;
   text-align: center;
   transition: all 0.2s ease;
@@ -166,8 +166,7 @@ body {
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: #333;
-  color: #fff;
+  color: #000000;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 0.75rem;
@@ -179,6 +178,14 @@ body {
 
 .modifier-badge:hover::after {
   opacity: 1;
+}
+
+.unfulfilled-modifier {
+    background-color: #f9fbfd;
+}
+
+.fulfilled-modifier {
+    background-color: #00ffb3;
 }
 
 .sets-list {

@@ -7,14 +7,16 @@ class RosterRenderer {
 
     initialize() {
         this.grid = document.getElementById('roster-grid');
+        this.modifierPanel = document.getElementById('modifier-panel');
     }
 
-    renderRoster(roster) {
+    renderRoster(players) {
         this.grid.innerHTML = '';
-        Object.values(roster).forEach(player => {
+        Object.values(players).forEach(player => {
             const card = this.renderPlayerCard(player);
             this.grid.appendChild(card);
         });
+        this.renderModifierPanel(Object.values(players));
     }
 
     renderPlayerCard(player) {
@@ -89,6 +91,60 @@ class RosterRenderer {
         card.appendChild(personalModifiersDiv);
 
         return card;
+    }
+
+    renderModifierPanel(players) {
+        const panel = document.createElement('div');
+        panel.className = 'modifier-subpanel';
+        const modifiers = this.buildManager.getGroupModifierData(players);
+        const renderedModifiers = new Set([...Object.keys(modifiers), ...defaultExpectedGroupModifiers.values()]);
+        const renderedModifiersByType = {};
+        for (const key of renderedModifiers) {
+            const modifier = modifiersData[key];
+            const modifierType = modifier.type;
+            if (renderedModifiersByType[modifierType] === undefined) {
+                renderedModifiersByType[modifierType] = [];
+            }
+            const x = [];
+            
+            renderedModifiersByType[modifierType].push(key);
+        }
+
+        if (renderedModifiersByType) {
+            for (const modifierType of modifierTypeRenderOrder) {
+                const modifiersToRender = renderedModifiersByType[modifierType];
+                if (renderedModifiersByType[modifierType] === undefined) {
+                    continue;
+                }
+                const modifiersList = document.createElement('span');
+                modifiersList.className = 'modifiers-list';
+                for (const modifier of modifiersToRender) {
+                    const badge = document.createElement('span');
+                    if (defaultExpectedGroupModifiers.has(modifier)) {
+                        if (modifiers[modifier] === undefined) {
+                            badge.className = 'modifier-badge unfulfilled-modifier';
+                        } else {
+                            badge.className = 'modifier-badge fulfilled-modifier';
+                        }
+                    } else {
+                        badge.className = 'modifier-badge';
+                    }
+                    badge.textContent = modifiersData[modifier]?.shortName || modifiersData[modifier]?.name || modifier;
+                    badge.dataset.fullname = modifiersData[modifier]?.name || modifier;
+                    badge.style.setProperty('--modifier-type-color', "#666666ff");
+                    modifiersList.appendChild(badge);
+                }
+                const modifierTypeHeader = document.createElement('div');
+                modifierTypeHeader.className = "group-modifier-type";
+                modifierTypeHeader.textContent = modifiersTypeData[modifierType].name;
+                panel.appendChild(modifierTypeHeader)
+                panel.appendChild(modifiersList);
+            }
+        } else {
+            modifiersList.textContent = 'None';
+        }
+        this.modifierPanel.appendChild(panel);
+
     }
 
     getSetName(setId) {
