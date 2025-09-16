@@ -11,6 +11,31 @@ const modifierTypeRenderOrder = [
     ModifierTypeEnum.MISC_BUFF
 ]
 
+const defaultExpectedTankModifiers = new Set([
+    ModifierEnum.MINOR_AEGIS,
+    ModifierEnum.MAJOR_RESOLVE, ModifierEnum.MINOR_RESOLVE,
+    ModifierEnum.MAJOR_PROTECTION, ModifierEnum.MINOR_PROTECTION,
+])
+
+const defaultExpectedHealerModifiers = new Set([
+    ModifierEnum.MAJOR_RESOLVE, ModifierEnum.MINOR_RESOLVE,
+])
+
+const defaultExpectedDpsModifiers = new Set([
+    ModifierEnum.MINOR_BERSERK,
+    ModifierEnum.MINOR_FORCE,
+    ModifierEnum.MINOR_SLAYER,
+    ModifierEnum.MAJOR_PROPHECY, ModifierEnum.MAJOR_SAVAGERY,
+    ModifierEnum.MAJOR_SORCERY, ModifierEnum.MAJOR_BRUTALITY,
+])
+
+const defaultExpectedRoleModifiers = {
+    [RoleEnum.TANK]: defaultExpectedTankModifiers,
+    [RoleEnum.HEALER]: defaultExpectedHealerModifiers,
+    [RoleEnum.DPS]: defaultExpectedDpsModifiers,
+    [RoleEnum.SUPPORT_DPS]: defaultExpectedDpsModifiers
+}
+
 const defaultExpectedGroupModifiers = new Set([
     // Offensive Buff
     ModifierEnum.MAJOR_COURAGE, ModifierEnum.MINOR_COURAGE, 

@@ -11,15 +11,16 @@ class RosterRenderer {
     }
 
     renderRoster(players) {
+        const roster = Object.values(players);
         this.grid.innerHTML = '';
         Object.values(players).forEach(player => {
-            const card = this.renderPlayerCard(player);
+            const card = this.renderPlayerCard(player, roster);
             this.grid.appendChild(card);
         });
-        this.renderModifierPanel(Object.values(players));
+        this.renderModifierPanel(roster);
     }
 
-    renderPlayerCard(player) {
+    renderPlayerCard(player, roster) {
         console.log('Rendering player:', player);
         const card = document.createElement('div');
         card.className = 'player-card';
@@ -84,11 +85,24 @@ class RosterRenderer {
         setsDiv.appendChild(setsList);
         card.appendChild(setsDiv);
 
-        const groupModifiersDiv = this.createModifierRow('Group', this.buildManager.getGroupModifierData([player]));
+        const providedGroupModifiers = this.buildManager.getGroupModifierData([player]);
+        const groupModifiersDiv = this.createModifierRow('Group', Object.keys(providedGroupModifiers));
         card.appendChild(groupModifiersDiv);
 
-        const personalModifiersDiv = this.createModifierRow('Personal', this.buildManager.getPersonalModifierData(player));
+        const personalModifiers = this.buildManager.getPersonalModifierData(player);
+        const personalModifiersDiv = this.createModifierRow('Personal', Object.keys(personalModifiers));
         card.appendChild(personalModifiersDiv);
+
+        const expectedModifiers = defaultExpectedGroupModifiers.union(defaultExpectedRoleModifiers[player.getRole()]).values();
+        const groupWideModifiers = this.buildManager.getGroupModifierData(roster);
+        const missingModifiers = [];
+        for (const expectedModifier of expectedModifiers) {
+            if (groupWideModifiers[expectedModifier] === undefined && personalModifiers[expectedModifier] === undefined) {
+                missingModifiers.push(expectedModifier);
+            }
+        }
+        const missingModifiersDiv = this.createModifierRow('Missing', missingModifiers, "#ff0000");
+        card.appendChild(missingModifiersDiv);
 
         return card;
     }
@@ -96,8 +110,8 @@ class RosterRenderer {
     renderModifierPanel(players) {
         const panel = document.createElement('div');
         panel.className = 'modifier-subpanel';
-        const modifiers = this.buildManager.getGroupModifierData(players);
-        const renderedModifiers = new Set([...Object.keys(modifiers), ...defaultExpectedGroupModifiers.values()]);
+        const activeGroupModifiers = this.buildManager.getGroupModifierData(players);
+        const renderedModifiers = new Set([...Object.keys(activeGroupModifiers), ...defaultExpectedGroupModifiers.values()]);
         const renderedModifiersByType = {};
         for (const key of renderedModifiers) {
             const modifier = modifiersData[key];
@@ -119,7 +133,7 @@ class RosterRenderer {
                 const modifiersList = document.createElement('span');
                 modifiersList.className = 'modifiers-list';
                 for (const modifier of modifiersToRender) {
-                    const badge = this.createGroupModifierBadge(modifier, modifiers, modifiersList);
+                    const badge = this.createGroupModifierBadge(modifier, activeGroupModifiers, modifiersList);
                     modifiersList.appendChild(badge);
                 }
                 const modifierTypeHeader = document.createElement('div');
@@ -135,10 +149,10 @@ class RosterRenderer {
 
     }
 
-    createGroupModifierBadge(modifier, modifiers, modifiersList) {
+    createGroupModifierBadge(modifier, activeModifiers) {
         const badge = document.createElement('span');
         if (defaultExpectedGroupModifiers.has(modifier)) {
-            if (modifiers[modifier] === undefined) {
+            if (activeModifiers[modifier] === undefined) {
                 badge.className = 'modifier-badge unfulfilled-modifier';
             } else {
                 badge.className = 'modifier-badge fulfilled-modifier';
@@ -156,7 +170,7 @@ class RosterRenderer {
         return setsData[setId]?.shortName || setsData[setId]?.name || setId;
     }
 
-    createModifierRow(label, modifiers) {
+    createModifierRow(label, modifiers, badgeColor = "#666666ff") {
         const modifiersDiv = document.createElement('div');
         const modifiersLabel = document.createElement('span');
         modifiersLabel.className = 'modifiers-label';
@@ -166,10 +180,10 @@ class RosterRenderer {
         const modifiersList = document.createElement('span');
         modifiersList.className = 'modifiers-list';
         if (modifiers) {
-            Object.keys(modifiers).forEach(key => {
-                const badge = this.createPlayerModifierBadge(key);
+            for (const modifier of modifiers) {
+                const badge = this.createPlayerModifierBadge(modifier, badgeColor);
                 modifiersList.appendChild(badge);
-            });
+            }
         } else {
             modifiersList.textContent = 'None';
         }
@@ -177,12 +191,12 @@ class RosterRenderer {
         return modifiersDiv;
     }
 
-    createPlayerModifierBadge(key) {
+    createPlayerModifierBadge(key, badgeColor) {
         const badge = document.createElement('span');
         badge.className = 'modifier-badge';
         badge.textContent = modifiersData[key]?.shortName || modifiersData[key]?.name || key;
         badge.dataset.fullname = modifiersData[key]?.name || key;
-        badge.style.setProperty('--modifier-type-color', "#666666ff");
+        badge.style.setProperty('--modifier-type-color', badgeColor);
         return badge;
     }
 }

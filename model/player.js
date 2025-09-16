@@ -43,4 +43,8 @@ class Player {
   toString() {
     return `Player: ${this.name}, Role: ${this.roleTemplate.name}, Build: ${this.playerBuild ? this.playerBuild.name : 'None'}`;
   }
+
+  getRole() {
+    return this.roleTemplate.role;
+  }
 }
