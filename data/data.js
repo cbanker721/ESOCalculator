@@ -28,7 +28,7 @@ const data = {
       "skillLine3": SkillLineEnum.STORM_CALLING
     },
     "heraldArdentFlameGravelord": {
-      "name": "Herald / Ardent / Gravelord",
+      "name": "Herald / Ardent / Grave",
       "race": RaceEnum.DARK_ELF,
       "mundus": MundusEnum.THE_THIEF,
       "mythic": SetEnum.VELOTHI_UR_MAGE,
@@ -46,7 +46,7 @@ const data = {
       "skillLine3": SkillLineEnum.AEDRIC_SPEAR
     },
     "heraldAssassinationGravelord": {
-      "name": "Herald / Assassin / Gravelord",
+      "name": "Herald / Assassin / Grave",
       "race": RaceEnum.DARK_ELF,
       "mundus": MundusEnum.THE_THIEF,
       "mythic": SetEnum.VELOTHI_UR_MAGE,
