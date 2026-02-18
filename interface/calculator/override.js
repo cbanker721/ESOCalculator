@@ -34,7 +34,14 @@ class CalculatorOverrideManager {
     }
 
     static computeDefaultStateWithOverride(key) {
-        return CalculatorOverrideManager.overrideCalculatorState[key] || calculatorUiConfig[key]?.default;  
+        console.log(`Computing default state for key: ${key} | Override value: ${CalculatorOverrideManager.overrideCalculatorState[key]} | Default config value: ${calculatorUiConfig[key]?.default}`);
+        if (CalculatorOverrideManager.overrideCalculatorState[key] !== undefined) { 
+            console.log(`Using override value for key ${key}:`, CalculatorOverrideManager.overrideCalculatorState[key]);
+            return CalculatorOverrideManager.overrideCalculatorState[key] 
+        } else {
+            console.log(`No override for key ${key}, using default config value:`, calculatorUiConfig[key]?.default);
+            return calculatorUiConfig[key]?.default;
+        }
     }
 
     static computeDefaultStateWithoutOverride(key) {
