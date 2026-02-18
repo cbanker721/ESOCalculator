@@ -1,7 +1,7 @@
 const data = {
   "presets": {
     "heraldAssassinationArdentFlame": {
-      "name": "Herald / Assassination / Ardent",
+      "name": "Herald / Assassin / Ardent",
       "race": RaceEnum.DARK_ELF,
       "mundus": MundusEnum.THE_THIEF,
       "mythic": SetEnum.VELOTHI_UR_MAGE,
@@ -37,7 +37,7 @@ const data = {
       "skillLine3": SkillLineEnum.GRAVE_LORD
     },
     "heraldAssassinationAedricSpear": {
-      "name": "Herald / Assassination / Aedric",
+      "name": "Herald / Assassin / Aedric",
       "race": RaceEnum.DARK_ELF,
       "mundus": MundusEnum.THE_THIEF,
       "mythic": SetEnum.VELOTHI_UR_MAGE,
@@ -46,7 +46,7 @@ const data = {
       "skillLine3": SkillLineEnum.AEDRIC_SPEAR
     },
     "heraldAssassinationGravelord": {
-      "name": "Herald / Assassination / Gravelord",
+      "name": "Herald / Assassin / Gravelord",
       "race": RaceEnum.DARK_ELF,
       "mundus": MundusEnum.THE_THIEF,
       "mythic": SetEnum.VELOTHI_UR_MAGE,
