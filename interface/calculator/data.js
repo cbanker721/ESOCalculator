@@ -58,7 +58,7 @@ const calculatorUiConfig = {
   [SpecialModifierEnum.ARMOR_SET_PEN_PASSIVE]: { "name": "Armor-set Passive", "pen": 1487, "type": "dropdown", "range": [0, 1, 2, 3], tooltip: "Pen from armor sets like Arch Druid (1-piece), Ansuul's Torment, and Tideborn" },
   [SpecialModifierEnum.ARENA_WEAPON_1_PIECE]: { "name": "Arena 1-piece", "pen": 1190, "pieces": 1, "tooltip": "Pen from arena weapons like Perfected Maelstrom staff" },
 
-  [CpEnum.FIGHTING_FINESSE]: {"default": true },
+  [CpEnum.FIGHTING_FINESSE]: {"default": false },
   [CpEnum.FORCE_OF_NATURE]: {"default": 0 },
   [CpEnum.PIERCING]: {"default": true },
 
@@ -74,6 +74,7 @@ const calculatorUiConfig = {
   // From sets.js
   [SetEnum.VELOTHI_UR_MAGE]: {"default": true, "triggers": [{ "key": ModifierEnum.MinorForce, "action": "check" }], },
   [SetEnum.LUCENT_ECHOES]: {"default": true },
+  [SetEnum.ALKOSH]: {"default": true },
   [SkillEnum.TWIN_BLADE_BLUNT_AXES]: {"default": 0 },
   [SkillEnum.TWIN_BLADE_BLUNT_MACES]: {"default": 0 },
 

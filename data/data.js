@@ -1,7 +1,7 @@
 const data = {
   "presets": {
     "heraldAssassinationArdentFlame": {
-      "name": "Herald / Assassination / Ardent Flame",
+      "name": "Herald / Assassination / Ardent",
       "race": RaceEnum.DARK_ELF,
       "mundus": MundusEnum.THE_THIEF,
       "mythic": SetEnum.VELOTHI_UR_MAGE,
@@ -9,8 +9,35 @@ const data = {
       "skillLine2": SkillLineEnum.ASSASSINATION,
       "skillLine3": SkillLineEnum.ARDENT_FLAME
     },
+    "heraldArdentFlameAedricSpear": {
+      "name": "Herald / Ardent / Aedric",
+      "race": RaceEnum.DARK_ELF,
+      "mundus": MundusEnum.THE_THIEF,
+      "mythic": SetEnum.VELOTHI_UR_MAGE,
+      "mainSkillLine": SkillLineEnum.HERALD_OF_THE_TOME,
+      "skillLine2": SkillLineEnum.ARDENT_FLAME,
+      "skillLine3": SkillLineEnum.AEDRIC_SPEAR
+    },
+    "heraldArdentFlameStormCalling": {
+      "name": "Herald / Ardent / Storm",
+      "race": RaceEnum.DARK_ELF,
+      "mundus": MundusEnum.THE_THIEF,
+      "mythic": SetEnum.VELOTHI_UR_MAGE,
+      "mainSkillLine": SkillLineEnum.HERALD_OF_THE_TOME,
+      "skillLine2": SkillLineEnum.ARDENT_FLAME,
+      "skillLine3": SkillLineEnum.STORM_CALLING
+    },
+    "heraldArdentFlameGravelord": {
+      "name": "Herald / Ardent / Gravelord",
+      "race": RaceEnum.DARK_ELF,
+      "mundus": MundusEnum.THE_THIEF,
+      "mythic": SetEnum.VELOTHI_UR_MAGE,
+      "mainSkillLine": SkillLineEnum.HERALD_OF_THE_TOME,
+      "skillLine2": SkillLineEnum.ARDENT_FLAME,
+      "skillLine3": SkillLineEnum.GRAVE_LORD
+    },
     "heraldAssassinationAedricSpear": {
-      "name": "Herald / Assassination / Aedric Spear",
+      "name": "Herald / Assassination / Aedric",
       "race": RaceEnum.DARK_ELF,
       "mundus": MundusEnum.THE_THIEF,
       "mythic": SetEnum.VELOTHI_UR_MAGE,
