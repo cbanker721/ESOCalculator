@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', initUI);
 
-const PATCH_VERSION = "U47"; // Easily update the game patch version here
+const PATCH_VERSION = "U48"; // Easily update the game patch version here
 
 function initUI() {
   // Set patch version in the title

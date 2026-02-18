@@ -13,7 +13,7 @@ These tools tend to be hosted online. Their owners (e.g. Banyu) like to take the
 
 ## Current State
 
-Target ESO version is U47. A lot of the values are still inaccurate as of now, since this is still in prototype state.
+Target ESO version is U48. A lot of the values are still inaccurate as of now, since this is still in prototype state.
 
 ## Permissions
 
